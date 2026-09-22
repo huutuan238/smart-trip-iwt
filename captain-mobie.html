@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+      name="viewport"
+    />
+    <meta content="mobile_tab" name="shell-type" />
+    <title>SmartTrip IWT Captain</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        .pb-safe {
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .pt-safe {
+          padding-top: env(safe-area-inset-top, 0px);
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#ffffff",
+              "on-secondary-container": "#00476e",
+              "surface-container-low": "#eff4ff",
+              "on-secondary-fixed-variant": "#004b73",
+              "inverse-on-surface": "#eaf1ff",
+              "outline-variant": "#c0c7d1",
+              "inverse-primary": "#94ccff",
+              error: "#ba1a1a",
+              "on-primary-container": "#cbe4ff",
+              surface: "#f8f9ff",
+              "surface-container": "#e5eeff",
+              "on-primary-fixed": "#001d32",
+              "primary-container": "#0369a1",
+              "surface-dim": "#cbdbf5",
+              "on-background": "#0b1c30",
+              secondary: "#006398",
+              "primary-fixed": "#cde5ff",
+              "surface-bright": "#f8f9ff",
+              "surface-tint": "#006399",
+              "on-tertiary-fixed-variant": "#005137",
+              "surface-container-high": "#dce9ff",
+              "tertiary-fixed": "#85f8c4",
+              "inverse-surface": "#213145",
+              "tertiary-fixed-dim": "#68dba9",
+              "on-tertiary-fixed": "#002114",
+              "on-surface-variant": "#40474f",
+              "secondary-fixed-dim": "#93ccff",
+              "error-container": "#ffdad6",
+              outline: "#707881",
+              "on-secondary-fixed": "#001d31",
+              "surface-container-highest": "#d3e4fe",
+              "surface-variant": "#d3e4fe",
+              "primary-fixed-dim": "#94ccff",
+              primary: "#00507d",
+              "secondary-fixed": "#cce5ff",
+              "on-surface": "#0b1c30",
+              "on-primary-fixed-variant": "#004b74",
+              "on-error-container": "#93000a",
+              background: "#f8f9ff",
+              "on-tertiary-container": "#83f7c2",
+              "tertiary-container": "#00724f",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-error": "#ffffff",
+              "secondary-container": "#5bb8fe",
+              "on-secondary": "#ffffff",
+              tertiary: "#00573b",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-lg": "1.5rem",
+              "space-xs": "0.25rem",
+              "margin-mobile": "1rem",
+              "space-sm": "0.5rem",
+              gutter: "1.5rem",
+              margin: "2rem",
+              "space-xl": "2.5rem",
+              "gutter-mobile": "0.75rem",
+              "space-md": "1rem",
+            },
+            fontFamily: {
+              "label-md": ["Space Grotesk"],
+              "body-sm": ["Inter"],
+              display: ["Space Grotesk"],
+              "headline-lg-mobile": ["Space Grotesk"],
+              "body-md": ["Inter"],
+              "label-sm": ["Space Grotesk"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Space Grotesk"],
+              "label-lg": ["Space Grotesk"],
+              "headline-sm": ["Space Grotesk"],
+              "headline-lg": ["Space Grotesk"],
+            },
+            fontSize: {
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+              display: [
+                "44px",
+                {
+                  lineHeight: "52px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg-mobile": [
+                "26px",
+                {
+                  lineHeight: "34px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+              "label-sm": [
+                "10px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+              "headline-md": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-sm": [
+                "18px",
+                {
+                  lineHeight: "26px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col"
+  >
+    <header
+      class="fixed top-0 w-full z-40 bg-surface/95 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div class="h-20 px-margin-mobile flex flex-col justify-center">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-primary text-[20px]"
+              >directions_boat</span
+            ><span
+              class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight"
+              >HP-9182</span
+            ><span
+              class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-1.5 py-0.5 rounded-full"
+              >450T</span
+            >
+          </div>
+          <div class="flex items-center gap-space-sm">
+            <div
+              class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded-full shadow-[0_1px_4px_rgba(0,0,0,0.03)]"
+            >
+              <span class="material-symbols-outlined text-tertiary text-[16px]"
+                >satellite_alt</span
+              ><span class="font-label-sm text-label-sm text-tertiary uppercase"
+                >GPS ON</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded-full shadow-[0_1px_4px_rgba(0,0,0,0.03)]"
+            >
+              <span class="material-symbols-outlined text-primary text-[16px]"
+                >cell_tower</span
+              ><span class="font-label-sm text-label-sm text-primary uppercase"
+                >4G LTE</span
+              >
+            </div>
+            <div
+              class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-on-primary text-[18px]"
+                >person</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mt-1">
+          <div class="flex items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined text-[14px]">explore</span
+            ><span class="font-label-sm text-label-sm text-on-surface-variant"
+              >Hải Phòng ➔ Việt Trì (Luồng Sông Cấm - Đuống)</span
+            >
+          </div>
+          <div class="font-label-sm text-label-sm text-primary font-bold">
+            Buồng Lái Chính
+          </div>
+        </div>
+      </div>
+    </header>
+    <main
+      class="flex flex-col relative w-full pt-20 pb-24 px-margin-mobile bg-surface min-h-screen"
+    >
+      <div class="flex flex-col w-full gap-space-sm pb-space-lg select-none">
+        <!-- Minimal Operational Trip Header Card -->
+        <div
+          class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm"
+        >
+          <div class="flex items-start justify-between">
+            <div class="flex flex-col">
+              <div class="flex items-center gap-1.5">
+                <span
+                  class="font-headline-sm text-headline-sm text-primary uppercase font-bold tracking-tight"
+                  >Tàu HP-9182</span
+                >
+                <span
+                  class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold"
+                  >450T • Clinker rời</span
+                >
+              </div>
+              <div class="flex items-center gap-1 mt-0.5">
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant font-medium"
+                  >Chuyến: ST-2025-089</span
+                >
+                <span class="text-outline-variant">•</span>
+                <span
+                  class="font-label-md text-label-md text-on-surface font-semibold"
+                  >TT. Nguyễn Văn Hưng</span
+                >
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-1 bg-tertiary-container/10 px-2 py-1 rounded-full"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-tertiary animate-pulse"
+              ></span>
+              <span
+                class="font-label-sm text-label-sm text-tertiary font-bold uppercase"
+                >Máy chính: 04h15m</span
+              >
+            </div>
+          </div>
+          <!-- Route indicator banner -->
+          <div
+            class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between"
+          >
+            <div class="flex items-center gap-2 min-w-0">
+              <span
+                class="material-symbols-outlined text-secondary text-[20px] shrink-0"
+                >anchor</span
+              >
+              <div class="truncate">
+                <span
+                  class="font-label-sm text-label-sm uppercase text-on-surface-variant block leading-none"
+                  >Hành trình 68.4 km</span
+                >
+                <span
+                  class="font-label-lg text-label-lg font-bold text-on-surface truncate block"
+                  >Đoạn Xá (HP) ➔ Cảng Phả Lại</span
+                >
+              </div>
+            </div>
+            <span
+              class="bg-surface-container text-primary font-label-sm text-label-sm font-bold px-2 py-1 rounded-full shrink-0"
+              >ETA 14:35</span
+            >
+          </div>
+          <!-- Live Telemetry Grid -->
+          <div class="grid grid-cols-3 gap-2">
+            <div
+              class="bg-surface-container-low rounded-lg p-2 flex flex-col items-center justify-center text-center"
+            >
+              <span
+                class="font-label-sm text-label-sm text-on-surface-variant uppercase font-medium"
+                >Vận tốc</span
+              >
+              <div class="flex items-baseline gap-0.5 mt-0.5">
+                <span
+                  class="font-headline-sm text-headline-sm font-bold text-on-surface"
+                  >13.8</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant font-semibold"
+                  >km/h</span
+                >
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low rounded-lg p-2 flex flex-col items-center justify-center text-center"
+            >
+              <span
+                class="font-label-sm text-label-sm text-on-surface-variant uppercase font-medium"
+                >Đã chạy</span
+              >
+              <div class="flex items-baseline gap-0.5 mt-0.5">
+                <span
+                  class="font-headline-sm text-headline-sm font-bold text-primary"
+                  >38.2</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant font-semibold"
+                  >km</span
+                >
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low rounded-lg p-2 flex flex-col items-center justify-center text-center"
+            >
+              <span
+                class="font-label-sm text-label-sm text-on-surface-variant uppercase font-medium"
+                >Tiến độ</span
+              >
+              <div class="flex items-baseline gap-0.5 mt-0.5">
+                <span
+                  class="font-headline-sm text-headline-sm font-bold text-tertiary"
+                  >56</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-tertiary font-bold"
+                  >%</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Operational Mode Notification Toast (Interactive Feedback) -->
+        <div
+          class="hidden w-full bg-surface-container-highest rounded-lg px-space-md py-2 flex items-center justify-between shadow-sm"
+          id="toast-banner"
+        >
+          <div class="flex items-center gap-2">
+            <span
+              class="material-symbols-outlined text-[20px] text-primary"
+              id="toast-icon"
+              >check_circle</span
+            >
+            <span
+              class="font-label-md text-label-md text-on-surface font-semibold"
+              id="toast-msg"
+              >Trạng thái đã được cập nhật</span
+            >
+          </div>
+          <span
+            class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase"
+            >Vừa xong</span
+          >
+        </div>
+        <!-- 5 HIGH-CONTRAST 1-TOUCH THUMB ACTIONS -->
+        <div class="flex flex-col gap-space-sm mt-1">
+          <!-- BUTTON 1: XUẤT BẾN (Completed / Active state) -->
+          <button
+            class="w-full text-left bg-tertiary text-on-tertiary rounded-xl p-space-md shadow-md active:scale-[0.99] transition-transform flex items-center justify-between relative overflow-hidden"
+            style="min-height: 80px"
+            type="button"
+          >
+            <div class="flex items-center gap-space-md">
+              <div
+                class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-[28px]"
+                  style="font-variation-settings: 'FILL' 1"
+                  >check_circle</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="font-headline-sm text-headline-sm font-bold tracking-tight text-white uppercase"
+                    >1. XUẤT BẾN</span
+                  >
+                  <span
+                    class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold"
+                    >XONG</span
+                  >
+                </div>
+                <span
+                  class="font-body-sm text-body-sm text-white/90 leading-tight mt-0.5"
+                  >Bắt đầu tính giờ &amp; dầu • Ghi nhận 09:00 Sáng</span
+                >
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-white/60 text-[24px]"
+              >done_all</span
+            >
+          </button>
+          <!-- BUTTON 2: ĐẾN MỐC KIỂM SOÁT (Primary Operational Milestone Action) -->
+          <div
+            class="w-full bg-primary-container text-on-primary rounded-xl shadow-lg p-space-md flex flex-col gap-space-sm relative overflow-hidden"
+          >
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-space-md">
+                <div
+                  class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center shrink-0 animate-bounce"
+                >
+                  <span class="material-symbols-outlined text-white text-[28px]"
+                    >pin_drop</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-headline-sm text-headline-sm font-bold tracking-tight text-white uppercase"
+                    >2. ĐẾN MỐC KIỂM SOÁT</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-primary-container leading-tight mt-0.5"
+                    >Xác nhận qua trạm kiểm soát luồng / ngã 3 sông</span
+                  >
+                </div>
+              </div>
+              <span
+                class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-1 rounded-full font-bold uppercase shrink-0"
+                >Km 42</span
+              >
+            </div>
+            <!-- Quick Action Trigger Button Inside -->
+            <button
+              class="w-full h-14 bg-surface-container-lowest text-primary rounded-lg font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow active:bg-surface-container-low transition-colors"
+              onclick="confirmMilestone()"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[24px]">done</span>
+              <span>XÁC NHẬN QUA: CẦU PHÚ LƯƠNG</span>
+            </button>
+          </div>
+          <!-- BUTTON 3: ĐANG CHỜ (Hold / Anchor / Congestion) -->
+          <button
+            class="w-full text-left bg-surface-container-lowest text-on-surface rounded-xl p-space-md shadow-sm active:bg-surface-container transition-colors flex items-center justify-between cursor-pointer"
+            onclick="openWaitingModal()"
+            style="min-height: 80px"
+            type="button"
+          >
+            <div class="flex items-center gap-space-md">
+              <div
+                class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-on-surface-variant text-[28px]"
+                  >pause_circle</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface uppercase"
+                    >3. ĐANG CHỜ</span
+                  >
+                  <span
+                    class="bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold"
+                    id="wait-badge"
+                    >SẴN SÀNG</span
+                  >
+                </div>
+                <span
+                  class="font-body-sm text-body-sm text-on-surface-variant leading-tight mt-0.5"
+                  id="wait-desc"
+                  >Vật cản luồng, chờ con nước hoặc chờ cầu bốc dỡ</span
+                >
+              </div>
+            </div>
+            <div
+              class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0"
+            >
+              <span
+                class="material-symbols-outlined text-on-surface-variant text-[22px]"
+                >touch_app</span
+              >
+            </div>
+          </button>
+          <!-- BUTTON 4: BÁO CÁO SỰ CỐ KHẨN CẤP (High Alert Red Zone) -->
+          <button
+            class="w-full text-left bg-error text-on-error rounded-xl p-space-md shadow-md active:opacity-90 transition-opacity flex items-center justify-between cursor-pointer"
+            onclick="openEmergencyModal()"
+            style="min-height: 84px"
+            type="button"
+          >
+            <div class="flex items-center gap-space-md">
+              <div
+                class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-[32px] animate-pulse"
+                  >warning</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="font-headline-sm text-headline-sm font-bold tracking-tight text-white uppercase"
+                    >4. BÁO CÁO SỰ CỐ KHẨN CẤP</span
+                  >
+                  <span
+                    class="bg-white/20 text-white font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold uppercase hidden"
+                    id="emergency-badge"
+                    >ĐÃ BÁO ĐỘNG</span
+                  >
+                </div>
+                <span
+                  class="font-body-sm text-body-sm text-white/90 leading-tight mt-0.5"
+                  id="emergency-desc"
+                  >Sự cố máy, thủng vỏ, mắc cạn • Báo Vùng Đỏ lập tức</span
+                >
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-white text-[28px]"
+              >notification_important</span
+            >
+          </button>
+          <!-- BUTTON 5: HOÀN THÀNH CHUYẾN (Docked & Rapid Fuel Settlement) -->
+          <div
+            class="w-full bg-surface-container-highest text-on-surface rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm"
+          >
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-space-md">
+                <div
+                  class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary text-[28px]"
+                    >flag</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-headline-sm text-headline-sm font-bold tracking-tight uppercase"
+                    >5. HOÀN THÀNH CHUYẾN</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant leading-tight mt-0.5"
+                    >Cập bến Phả Lại an toàn • Chốt tiêu hao D.O</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Ultra-Simple Numpad Ready Fuel Input & Complete Button -->
+            <div class="flex items-center gap-2 pt-1">
+              <div
+                class="flex-1 bg-surface-container-lowest rounded-lg px-3 py-2 flex items-center justify-between shadow-sm"
+              >
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant uppercase font-medium"
+                    >Dầu D.O thực tế</span
+                  >
+                  <input
+                    class="bg-transparent font-headline-sm text-headline-sm font-bold text-on-surface outline-none w-full placeholder:text-outline-variant p-0"
+                    id="fuel-input"
+                    placeholder="VD: 780"
+                    type="number"
+                  />
+                </div>
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant font-bold"
+                  >LÍT</span
+                >
+              </div>
+              <button
+                class="h-14 px-5 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg font-bold uppercase shrink-0 shadow active:bg-primary-container transition-colors flex items-center justify-center gap-1"
+                onclick="completeTrip()"
+                type="button"
+              >
+                <span>CHỐT</span>
+                <span class="material-symbols-outlined text-[18px]"
+                  >task_alt</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Quick Dispatch & Comms Bar (Thumb Friendly Bottom Stack) -->
+        <div class="w-full grid grid-cols-2 gap-2 mt-2">
+          <a
+            class="h-12 bg-surface-container-lowest rounded-xl flex items-center justify-center gap-2 shadow-sm active:bg-surface-container transition-colors"
+            href="tel:0904123456"
+          >
+            <span class="material-symbols-outlined text-primary text-[20px]"
+              >phone_in_talk</span
+            >
+            <span class="font-label-md text-label-md font-bold text-on-surface"
+              >ĐIỀU HÀNH CA TRỰC</span
+            >
+          </a>
+          <a
+            class="h-12 bg-surface-container-lowest rounded-xl flex items-center justify-center gap-2 shadow-sm active:bg-surface-container transition-colors"
+            href="tel:16"
+          >
+            <span class="material-symbols-outlined text-secondary text-[20px]"
+              >radio</span
+            >
+            <span class="font-label-md text-label-md font-bold text-on-surface"
+              >VHF KÊNH 16</span
+            >
+          </a>
+        </div>
+        <!-- Status Sync Footer -->
+        <div class="flex items-center justify-center gap-2 py-1">
+          <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant"
+            >GPS Trực tuyến • Đồng bộ đám mây 5s trước (AIS V1.4)</span
+          >
+        </div>
+      </div>
+      <!-- ================= MODAL / BOTTOM SHEET 1: ĐANG CHỜ ================= -->
+      <div
+        class="fixed inset-0 z-50 transition-opacity duration-300 pointer-events-none opacity-0"
+        id="waitingModalBackdrop"
+      >
+        <div
+          class="absolute inset-0 bg-on-surface/50 backdrop-blur-sm"
+          onclick="closeWaitingModal()"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 right-0 max-h-[85vh] overflow-y-auto bg-surface rounded-t-2xl shadow-2xl p-space-md flex flex-col gap-space-md transform translate-y-full transition-transform duration-300 ease-out"
+          id="waitingModalContent"
+        >
+          <!-- Top Handle Bar & Header -->
+          <div class="flex flex-col items-center gap-2">
+            <div class="w-12 h-1.5 bg-outline-variant/60 rounded-full"></div>
+            <div class="flex items-center justify-between w-full mt-1">
+              <div class="flex items-center gap-2">
+                <span
+                  class="material-symbols-outlined text-secondary text-[26px]"
+                  >pause_circle</span
+                >
+                <div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface uppercase font-bold"
+                  >
+                    Khai Báo Trạng Thái: Đang Chờ
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Chọn lý do để gửi báo cáo tức thì về điều hành luồng
+                  </p>
+                </div>
+              </div>
+              <button
+                class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant active:bg-surface-container-highest cursor-pointer"
+                onclick="closeWaitingModal()"
+                type="button"
+              >
+                <span class="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+          </div>
+          <!-- GPS & Real-time Live Badge -->
+          <div
+            class="bg-surface-container-low border border-surface-container-high rounded-xl p-3 flex items-center justify-between"
+          >
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]"
+                >my_location</span
+              >
+              <div class="flex flex-col">
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase font-medium"
+                  >Tọa độ GPS Luồng</span
+                >
+                <span
+                  class="font-label-md text-label-md font-bold text-on-surface"
+                  >Km 38.2 Luồng Kinh Thầy (20°58'N - 106°22'E)</span
+                >
+              </div>
+            </div>
+            <div class="flex flex-col items-end">
+              <span
+                class="font-label-sm text-label-sm text-on-surface-variant uppercase font-medium"
+                >Tem thời gian</span
+              >
+              <span
+                class="font-label-md text-label-md font-bold text-primary"
+                id="waitingModalTime"
+                >--:--:--</span
+              >
+            </div>
+          </div>
+          <!-- 4 Options for "Đang Chờ" -->
+          <div class="flex flex-col gap-2.5" id="waitingOptionsList">
+            <!-- Option 1 -->
+            <button
+              class="waiting-option-btn w-full text-left bg-surface-container-lowest border-2 border-transparent rounded-xl p-3.5 shadow-sm active:bg-surface-container-low transition-all flex items-center justify-between cursor-pointer"
+              data-id="1"
+              data-label="Chờ Bến Dỡ"
+              onclick="selectWaitingOption(1, 'Chờ Bến Dỡ', 'Cầu cảng kín bãi, chưa tiếp nhận')"
+              type="button"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-headline-sm font-bold shrink-0"
+                >
+                  1
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg font-bold text-on-surface"
+                    >Chờ Bến Dỡ</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Cầu cảng kín bãi, chưa tiếp nhận</span
+                  >
+                </div>
+              </div>
+              <div
+                class="option-check-circle w-7 h-7 rounded-full border-2 border-outline-variant flex items-center justify-center text-transparent transition-colors"
+              >
+                <span class="material-symbols-outlined text-[18px]">check</span>
+              </div>
+            </button>
+            <!-- Option 2 -->
+            <button
+              class="waiting-option-btn w-full text-left bg-surface-container-lowest border-2 border-transparent rounded-xl p-3.5 shadow-sm active:bg-surface-container-low transition-all flex items-center justify-between cursor-pointer"
+              data-id="2"
+              data-label="Chờ Con Nước"
+              onclick="selectWaitingOption(2, 'Chờ Con Nước', 'Đợi đỉnh triều để vượt cạn')"
+              type="button"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-headline-sm font-bold shrink-0"
+                >
+                  2
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg font-bold text-on-surface"
+                    >Chờ Con Nước</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Đợi đỉnh triều để vượt cạn</span
+                  >
+                </div>
+              </div>
+              <div
+                class="option-check-circle w-7 h-7 rounded-full border-2 border-outline-variant flex items-center justify-center text-transparent transition-colors"
+              >
+                <span class="material-symbols-outlined text-[18px]">check</span>
+              </div>
+            </button>
+            <!-- Option 3 -->
+            <button
+              class="waiting-option-btn w-full text-left bg-surface-container-lowest border-2 border-transparent rounded-xl p-3.5 shadow-sm active:bg-surface-container-low transition-all flex items-center justify-between cursor-pointer"
+              data-id="3"
+              data-label="Chờ Tĩnh Không"
+              onclick="selectWaitingOption(3, 'Chờ Tĩnh Không', 'Cầu xe lửa / đường điện thấp')"
+              type="button"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-headline-sm font-bold shrink-0"
+                >
+                  3
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg font-bold text-on-surface"
+                    >Chờ Tĩnh Không</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Cầu xe lửa / đường điện thấp</span
+                  >
+                </div>
+              </div>
+              <div
+                class="option-check-circle w-7 h-7 rounded-full border-2 border-outline-variant flex items-center justify-center text-transparent transition-colors"
+              >
+                <span class="material-symbols-outlined text-[18px]">check</span>
+              </div>
+            </button>
+            <!-- Option 4 -->
+            <button
+              class="waiting-option-btn w-full text-left bg-surface-container-lowest border-2 border-transparent rounded-xl p-3.5 shadow-sm active:bg-surface-container-low transition-all flex items-center justify-between cursor-pointer"
+              data-id="4"
+              data-label="Vật Cản Luồng"
+              onclick="selectWaitingOption(4, 'Vật Cản Luồng', 'Tàu trước neo, đăng đáy cản trở')"
+              type="button"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-headline-sm font-bold shrink-0"
+                >
+                  4
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg font-bold text-on-surface"
+                    >Vật Cản Luồng</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Tàu trước neo, đăng đáy cản trở</span
+                  >
+                </div>
+              </div>
+              <div
+                class="option-check-circle w-7 h-7 rounded-full border-2 border-outline-variant flex items-center justify-center text-transparent transition-colors"
+              >
+                <span class="material-symbols-outlined text-[18px]">check</span>
+              </div>
+            </button>
+          </div>
+          <!-- Modal Actions -->
+          <div class="flex items-center gap-2 pt-1 pb-safe">
+            <button
+              class="w-1/3 h-12 bg-surface-container-high text-on-surface rounded-xl font-label-lg text-label-lg font-bold uppercase transition-colors active:bg-surface-container-highest cursor-pointer"
+              onclick="closeWaitingModal()"
+              type="button"
+            >
+              Đóng
+            </button>
+            <button
+              class="flex-1 h-12 bg-primary text-on-primary rounded-xl font-label-lg text-label-lg font-bold uppercase shadow flex items-center justify-center gap-1.5 transition-colors active:bg-primary-container cursor-pointer"
+              onclick="confirmWaitingSelection()"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[20px]">send</span>
+              <span>Xác Nhận &amp; Gửi VTS</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- ================= MODAL / BOTTOM SHEET 2: BÁO CÁO SỰ CỐ KHẨN CẤP (VÙNG ĐỎ) ================= -->
+      <div
+        class="fixed inset-0 z-50 transition-opacity duration-300 pointer-events-none opacity-0"
+        id="emergencyModalBackdrop"
+      >
+        <div
+          class="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          onclick="closeEmergencyModal()"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 right-0 max-h-[88vh] overflow-y-auto bg-surface rounded-t-2xl shadow-2xl p-space-md flex flex-col gap-space-md transform translate-y-full transition-transform duration-300 ease-out border-t-4 border-error"
+          id="emergencyModalContent"
+        >
+          <!-- Top Handle Bar & Emergency Alert Banner -->
+          <div class="flex flex-col items-center gap-2">
+            <div class="w-12 h-1.5 bg-error/40 rounded-full"></div>
+            <div class="flex items-center justify-between w-full mt-1">
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-10 h-10 rounded-full bg-error-container text-error flex items-center justify-center shrink-0 animate-pulse"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >warning</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-error uppercase font-bold tracking-tight"
+                  >
+                    Khai Báo Sự Cố Khẩn Cấp
+                  </h3>
+                  <p
+                    class="font-body-sm text-body-sm text-on-surface-variant font-medium"
+                  >
+                    Báo động ưu tiên Vùng Đỏ đến Trung tâm Cứu hộ &amp; VTS
+                  </p>
+                </div>
+              </div>
+              <button
+                class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant active:bg-surface-container-highest cursor-pointer"
+                onclick="closeEmergencyModal()"
+                type="button"
+              >
+                <span class="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+          </div>
+          <!-- GPS Coordinates & Auto Siren Beacon -->
+          <div
+            class="bg-error-container/30 border border-error/30 rounded-xl p-3 flex items-center justify-between"
+          >
+            <div class="flex items-center gap-2">
+              <span
+                class="material-symbols-outlined text-error text-[22px] animate-bounce"
+                >fmd_bad</span
+              >
+              <div class="flex flex-col">
+                <span
+                  class="font-label-sm text-label-sm text-on-error-container uppercase font-bold"
+                  >Vị trí cấp cứu GPS</span
+                >
+                <span
+                  class="font-label-md text-label-md font-bold text-on-surface"
+                  >Km 38.2 Sông Kinh Thầy (HP-9182)</span
+                >
+              </div>
+            </div>
+            <div class="flex flex-col items-end">
+              <span
+                class="font-label-sm text-label-sm text-error uppercase font-bold"
+                >Tem thời gian</span
+              >
+              <span
+                class="font-label-md text-label-md font-bold text-error"
+                id="emergencyModalTime"
+                >--:--:--</span
+              >
+            </div>
+          </div>
+          <!-- 4 Red-Zone Emergency Options -->
+          <div class="flex flex-col gap-2.5" id="emergencyOptionsList">
+            <!-- Emergency Option 1 -->
+            <button
+              class="emergency-option-btn w-full text-left bg-surface-container-lowest border-2 border-transparent rounded-xl p-3.5 shadow-sm active:bg-error-container/20 transition-all flex items-center justify-between cursor-pointer"
+              data-id="1"
+              data-label="Sương Mù Dày"
+              onclick="selectEmergencyOption(1, 'Sương Mù Dày', 'Tầm nhìn &lt; 50m, giảm tốc dạt bờ')"
+              type="button"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-surface-container-high text-error flex items-center justify-center font-headline-sm font-bold shrink-0"
+                >
+                  1
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg font-bold text-on-surface"
+                    >Sương Mù Dày</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Tầm nhìn &lt; 50m, giảm tốc dạt bờ</span
+                  >
+                </div>
+              </div>
+              <div
+                class="emergency-check-circle w-7 h-7 rounded-full border-2 border-outline-variant flex items-center justify-center text-transparent transition-colors"
+              >
+                <span class="material-symbols-outlined text-[18px]">check</span>
+              </div>
+            </button>
+            <!-- Emergency Option 2 -->
+            <button
+              class="emergency-option-btn w-full text-left bg-surface-container-lowest border-2 border-transparent rounded-xl p-3.5 shadow-sm active:bg-error-container/20 transition-all flex items-center justify-between cursor-pointer"
+              data-id="2"
+              data-label="Hỏng Động Cơ / Lái"
+              onclick="selectEmergencyOption(2, 'Hỏng Động Cơ / Lái', 'Máy chết tải hoặc mất điều khiển')"
+              type="button"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-surface-container-high text-error flex items-center justify-center font-headline-sm font-bold shrink-0"
+                >
+                  2
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg font-bold text-on-surface"
+                    >Hỏng Động Cơ / Lái</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Máy chết tải hoặc mất điều khiển</span
+                  >
+                </div>
+              </div>
+              <div
+                class="emergency-check-circle w-7 h-7 rounded-full border-2 border-outline-variant flex items-center justify-center text-transparent transition-colors"
+              >
+                <span class="material-symbols-outlined text-[18px]">check</span>
+              </div>
+            </button>
+            <!-- Emergency Option 3 -->
+            <button
+              class="emergency-option-btn w-full text-left bg-surface-container-lowest border-2 border-transparent rounded-xl p-3.5 shadow-sm active:bg-error-container/20 transition-all flex items-center justify-between cursor-pointer"
+              data-id="3"
+              data-label="Mắc Cạn Đáy"
+              onclick="selectEmergencyOption(3, 'Mắc Cạn Đáy', 'Bụng tàu cấn cát, cần lai dắt')"
+              type="button"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-surface-container-high text-error flex items-center justify-center font-headline-sm font-bold shrink-0"
+                >
+                  3
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg font-bold text-on-surface"
+                    >Mắc Cạn Đáy</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Bụng tàu cấn cát, cần lai dắt</span
+                  >
+                </div>
+              </div>
+              <div
+                class="emergency-check-circle w-7 h-7 rounded-full border-2 border-outline-variant flex items-center justify-center text-transparent transition-colors"
+              >
+                <span class="material-symbols-outlined text-[18px]">check</span>
+              </div>
+            </button>
+            <!-- Emergency Option 4 -->
+            <button
+              class="emergency-option-btn w-full text-left bg-surface-container-lowest border-2 border-transparent rounded-xl p-3.5 shadow-sm active:bg-error-container/20 transition-all flex items-center justify-between cursor-pointer"
+              data-id="4"
+              data-label="Thủng Vỏ / Vào Nước"
+              onclick="selectEmergencyOption(4, 'Thủng Vỏ / Vào Nước', 'Nguy cơ chìm hầm hàng')"
+              type="button"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-surface-container-high text-error flex items-center justify-center font-headline-sm font-bold shrink-0"
+                >
+                  4
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg font-bold text-on-surface"
+                    >Thủng Vỏ / Vào Nước</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Nguy cơ chìm hầm hàng</span
+                  >
+                </div>
+              </div>
+              <div
+                class="emergency-check-circle w-7 h-7 rounded-full border-2 border-outline-variant flex items-center justify-center text-transparent transition-colors"
+              >
+                <span class="material-symbols-outlined text-[18px]">check</span>
+              </div>
+            </button>
+          </div>
+          <!-- Modal Actions: Siren Trigger & Direct Hotline -->
+          <div class="flex items-center gap-2 pt-1 pb-safe">
+            <button
+              class="w-1/3 h-12 bg-surface-container-high text-on-surface rounded-xl font-label-lg text-label-lg font-bold uppercase transition-colors active:bg-surface-container-highest cursor-pointer"
+              onclick="closeEmergencyModal()"
+              type="button"
+            >
+              Hủy Bỏ
+            </button>
+            <button
+              class="flex-1 h-12 bg-error text-on-error rounded-xl font-label-lg text-label-lg font-bold uppercase shadow flex items-center justify-center gap-1.5 transition-opacity active:opacity-90 cursor-pointer"
+              onclick="confirmEmergencySelection()"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[22px]"
+                >notification_important</span
+              >
+              <span>PHÁT BÁO ĐỘNG VÙNG ĐỎ</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <script>
+        function formatCurrentTime() {
+          const now = new Date();
+          const h = String(now.getHours()).padStart(2, "0");
+          const m = String(now.getMinutes()).padStart(2, "0");
+          const s = String(now.getSeconds()).padStart(2, "0");
+          return `${h}:${m}:${s}`;
+        }
+
+        function showToast(message, iconName = "check_circle") {
+          const toast = document.getElementById("toast-banner");
+          const toastMsg = document.getElementById("toast-msg");
+          const toastIcon = document.getElementById("toast-icon");
+          if (!toast) return;
+          toastMsg.innerText = message;
+          toastIcon.innerText = iconName;
+          toast.classList.remove("hidden");
+          clearTimeout(window.__toastTimeout);
+          window.__toastTimeout = setTimeout(() => {
+            toast.classList.add("hidden");
+          }, 4000);
+        }
+
+        function confirmMilestone() {
+          showToast("Đã ghi nhận mốc Cầu Phú Lương (Km 42)!", "add_location");
+        }
+
+        // --- MODAL 1: ĐANG CHỜ ---
+        let selectedWaitingOptionData = null;
+
+        function openWaitingModal() {
+          document.getElementById("waitingModalTime").innerText =
+            formatCurrentTime();
+          const backdrop = document.getElementById("waitingModalBackdrop");
+          const content = document.getElementById("waitingModalContent");
+          backdrop.classList.remove("pointer-events-none", "opacity-0");
+          backdrop.classList.add("opacity-100");
+          setTimeout(() => {
+            content.classList.remove("translate-y-full");
+            content.classList.add("translate-y-0");
+          }, 10);
+        }
+
+        function closeWaitingModal() {
+          const backdrop = document.getElementById("waitingModalBackdrop");
+          const content = document.getElementById("waitingModalContent");
+          content.classList.remove("translate-y-0");
+          content.classList.add("translate-y-full");
+          setTimeout(() => {
+            backdrop.classList.remove("opacity-100");
+            backdrop.classList.add("opacity-0", "pointer-events-none");
+          }, 280);
+        }
+
+        function selectWaitingOption(index, title, sub) {
+          selectedWaitingOptionData = { index, title, sub };
+          const buttons = document.querySelectorAll(".waiting-option-btn");
+          buttons.forEach((btn) => {
+            const circle = btn.querySelector(".option-check-circle");
+            if (parseInt(btn.getAttribute("data-id")) === index) {
+              btn.classList.remove(
+                "bg-surface-container-lowest",
+                "border-transparent"
+              );
+              btn.classList.add("bg-surface-container-high", "border-primary");
+              circle.classList.remove(
+                "border-outline-variant",
+                "text-transparent"
+              );
+              circle.classList.add(
+                "border-primary",
+                "bg-primary",
+                "text-on-primary"
+              );
+            } else {
+              btn.classList.remove(
+                "bg-surface-container-high",
+                "border-primary"
+              );
+              btn.classList.add(
+                "bg-surface-container-lowest",
+                "border-transparent"
+              );
+              circle.classList.remove(
+                "border-primary",
+                "bg-primary",
+                "text-on-primary"
+              );
+              circle.classList.add(
+                "border-outline-variant",
+                "text-transparent"
+              );
+            }
+          });
+        }
+
+        function confirmWaitingSelection() {
+          if (!selectedWaitingOptionData) {
+            // Default to option 1 if none clicked yet
+            selectWaitingOption(
+              1,
+              "Chờ Bến Dỡ",
+              "Cầu cảng kín bãi, chưa tiếp nhận"
+            );
+          }
+          const badge = document.getElementById("wait-badge");
+          const desc = document.getElementById("wait-desc");
+          badge.innerText =
+            "ĐANG CHỜ: " + selectedWaitingOptionData.title.toUpperCase();
+          badge.className =
+            "bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold";
+          desc.innerText =
+            selectedWaitingOptionData.title +
+            " • " +
+            selectedWaitingOptionData.sub;
+
+          closeWaitingModal();
+          showToast(
+            "Đã gửi bản tin [Đang Chờ: " +
+              selectedWaitingOptionData.title +
+              "] về Trung tâm điều hành VTS",
+            "hourglass_top"
+          );
+        }
+
+        // --- MODAL 2: BÁO CÁO SỰ CỐ KHẨN CẤP ---
+        let selectedEmergencyOptionData = null;
+
+        function openEmergencyModal() {
+          document.getElementById("emergencyModalTime").innerText =
+            formatCurrentTime();
+          const backdrop = document.getElementById("emergencyModalBackdrop");
+          const content = document.getElementById("emergencyModalContent");
+          backdrop.classList.remove("pointer-events-none", "opacity-0");
+          backdrop.classList.add("opacity-100");
+          setTimeout(() => {
+            content.classList.remove("translate-y-full");
+            content.classList.add("translate-y-0");
+          }, 10);
+        }
+
+        function closeEmergencyModal() {
+          const backdrop = document.getElementById("emergencyModalBackdrop");
+          const content = document.getElementById("emergencyModalContent");
+          content.classList.remove("translate-y-0");
+          content.classList.add("translate-y-full");
+          setTimeout(() => {
+            backdrop.classList.remove("opacity-100");
+            backdrop.classList.add("opacity-0", "pointer-events-none");
+          }, 280);
+        }
+
+        function selectEmergencyOption(index, title, sub) {
+          selectedEmergencyOptionData = { index, title, sub };
+          const buttons = document.querySelectorAll(".emergency-option-btn");
+          buttons.forEach((btn) => {
+            const circle = btn.querySelector(".emergency-check-circle");
+            if (parseInt(btn.getAttribute("data-id")) === index) {
+              btn.classList.remove(
+                "bg-surface-container-lowest",
+                "border-transparent"
+              );
+              btn.classList.add("bg-error-container", "border-error");
+              circle.classList.remove(
+                "border-outline-variant",
+                "text-transparent"
+              );
+              circle.classList.add("border-error", "bg-error", "text-on-error");
+            } else {
+              btn.classList.remove("bg-error-container", "border-error");
+              btn.classList.add(
+                "bg-surface-container-lowest",
+                "border-transparent"
+              );
+              circle.classList.remove(
+                "border-error",
+                "bg-error",
+                "text-on-error"
+              );
+              circle.classList.add(
+                "border-outline-variant",
+                "text-transparent"
+              );
+            }
+          });
+        }
+
+        function confirmEmergencySelection() {
+          if (!selectedEmergencyOptionData) {
+            selectEmergencyOption(
+              2,
+              "Hỏng Động Cơ / Lái",
+              "Máy chết tải hoặc mất điều khiển"
+            );
+          }
+          const badge = document.getElementById("emergency-badge");
+          const desc = document.getElementById("emergency-desc");
+          badge.classList.remove("hidden");
+          badge.innerText =
+            "CẤP BÁO: " + selectedEmergencyOptionData.title.toUpperCase();
+          desc.innerText =
+            selectedEmergencyOptionData.title +
+            " (" +
+            selectedEmergencyOptionData.sub +
+            ") • VTS đang điều phối ứng cứu!";
+
+          closeEmergencyModal();
+          showToast(
+            "ĐÃ PHÁT BÁO ĐỘNG KHẨN CẤP ĐẾN CA TRỰC & VTS!",
+            "e911_emergency"
+          );
+        }
+
+        function completeTrip() {
+          const input = document.getElementById("fuel-input");
+          const val = input.value.trim();
+          if (!val) {
+            showToast("Vui lòng nhập số lít dầu D.O thực tế!", "info");
+            input.focus();
+            return;
+          }
+          showToast(
+            "Hoàn thành chuyến! Dầu tiêu thụ: " + val + " Lít",
+            "check_circle"
+          );
+        }
+      </script>
+    </main>
+    <nav
+      class="fixed bottom-0 w-full z-40 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)]"
+      data-active-classes="bg-surface-container-high text-primary font-semibold"
+    >
+      <div
+        class="h-20 px-margin-mobile flex items-center justify-between gap-space-sm"
+      >
+        <a
+          class="flex-1 h-12 rounded-xl bg-error text-on-error flex items-center justify-center gap-space-xs font-label-lg text-label-lg tracking-wide uppercase transition-colors shadow-[0_2px_8px_rgba(186,26,26,0.2)]"
+          data-path="radio-vhf-16"
+          href="tel:16"
+          ><span class="material-symbols-outlined text-[20px]"
+            >e911_emergency</span
+          ><span>VHF K.16 (Cấp cứu)</span></a
+        ><a
+          class="flex-1 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center gap-space-xs font-label-lg text-label-lg tracking-wide uppercase transition-colors shadow-[0_2px_8px_rgba(0,80,125,0.2)]"
+          data-path="dieu-hanh-trung-tam"
+          href="#"
+          ><span class="material-symbols-outlined text-[20px]"
+            >support_agent</span
+          ><span>Gọi Điều Hành</span></a
+        ><a
+          class="w-12 h-12 rounded-xl bg-surface-container-highest text-on-surface flex items-center justify-center transition-colors"
+          data-path="ban-do-luong-chay"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]">map</span></a
+        ><a
+          class="w-12 h-12 rounded-xl bg-surface-container-highest text-on-surface flex items-center justify-center transition-colors"
+          data-path="nhat-ky-hanh-trinh"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]"
+            >history_edu</span
+          ></a
+        >
+      </div>
+    </nav>
+  </body>
+</html>

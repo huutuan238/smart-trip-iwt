@@ -357,6 +357,7 @@
                     B.1 Đã chọn
                   </div>
                   <div
+                    id="stepper-vessel"
                     class="font-label-md text-label-md text-on-surface truncate font-medium"
                   >
                     Tàu HP-9182
@@ -403,6 +404,7 @@
                     B.3 Tuyến luồng
                   </div>
                   <div
+                    id="stepper-route"
                     class="font-label-md text-label-md text-on-surface truncate font-medium"
                   >
                     Đoạn Xá - Phả Lại
@@ -449,6 +451,7 @@
                     B.5 P&amp;L
                   </div>
                   <div
+                    id="stepper-pnl"
                     class="font-label-md text-label-md text-on-surface truncate font-medium"
                   >
                     +19.4tr (+35%)
@@ -472,6 +475,7 @@
                     B.6 Kiểm tra
                   </div>
                   <div
+                    id="stepper-safety"
                     class="font-label-md text-label-md text-on-surface truncate font-medium"
                   >
                     94 Điểm an toàn
@@ -495,6 +499,7 @@
                     B.7 Đề Xuất
                   </div>
                   <div
+                    id="stepper-scenario"
                     class="font-label-md text-label-md text-primary truncate font-bold"
                   >
                     3 Kịch Bản AI
@@ -533,6 +538,7 @@
                     >
                   </div>
                   <button
+                    id="btn-change-vessel"
                     class="px-space-sm py-1 rounded text-primary hover:bg-surface-container transition-colors font-label-sm text-label-sm font-semibold flex items-center gap-1"
                     type="button"
                   >
@@ -543,21 +549,25 @@
                   </button>
                 </div>
                 <div
+                  id="vessel-panel"
                   class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm items-center"
                 >
                   <div
                     class="sm:col-span-1 rounded bg-surface-container-low p-space-xs flex flex-col items-center text-center"
                   >
                     <img
+                      id="vessel-img"
                       class="w-full h-24 object-cover rounded shadow-inner mb-space-xs"
                       data-alt="Barge transport vessel operating along northern Vietnam riverway under clear daylight with clean blue sky and calm water reflection"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0iyQ9T2FBXW-ztTYmxAwagB2Ewh7TiM1Wy_S4u7osCTV9ybpTgmdBq-eyvIboCUyP5Y65eoMQatfxFq0PxCD9P9nH-Hz_Yn6P7XvO44QnHru7LLFhuw3go_W5pohGb9TaytQOA3ysBOgDcRFFzVj40RAJ2No4Ypzo8zNLdXYaHYi4GwwdBcss9YREqw7WTtyEmvqVWEh167oqgf3LdKf766P6CkO0Xs-a1ypmD70RtINVLBf_RAsr"
                     />
                     <span
+                      id="vessel-name"
                       class="font-headline-sm text-headline-sm text-primary tracking-tight"
                       >HP-9182</span
                     >
                     <span
+                      id="vessel-type"
                       class="font-label-sm text-label-sm text-on-surface-variant"
                       >Sà lan tự hành mui trần</span
                     >
@@ -570,7 +580,7 @@
                       >
                       <span
                         class="font-headline-sm text-headline-sm text-on-surface font-semibold"
-                        >450
+                        ><span id="vessel-dwt">450</span>
                         <span
                           class="font-label-md text-label-md text-on-surface-variant"
                           >DWT</span
@@ -584,7 +594,7 @@
                       >
                       <span
                         class="font-headline-sm text-headline-sm text-on-surface font-semibold"
-                        >2.45
+                        ><span id="vessel-draft">2.45</span>
                         <span
                           class="font-label-md text-label-md text-on-surface-variant"
                           >m</span
@@ -598,7 +608,7 @@
                       >
                       <span
                         class="font-headline-sm text-headline-sm text-on-surface font-semibold"
-                        >6.80
+                        ><span id="vessel-air-draft">6.80</span>
                         <span
                           class="font-label-md text-label-md text-on-surface-variant"
                           >m</span
@@ -612,7 +622,7 @@
                       >
                       <span
                         class="font-headline-sm text-headline-sm text-on-surface font-semibold"
-                        >14
+                        ><span id="vessel-speed">14</span>
                         <span
                           class="font-label-md text-label-md text-on-surface-variant"
                           >km/h</span
@@ -766,6 +776,7 @@
                     >
                   </div>
                   <span
+                    id="route-distance-badge"
                     class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold"
                     >Tổng cự ly: 68.4 Km</span
                   >
@@ -773,50 +784,66 @@
                 <div
                   class="grid grid-cols-1 md:grid-cols-2 gap-space-sm mb-space-sm"
                 >
-                  <div
-                    class="p-space-sm rounded bg-surface-container-low flex items-start gap-space-sm"
+                  <button
+                    type="button"
+                    id="btn-pick-origin"
+                    class="text-left p-space-sm rounded bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-start gap-space-sm ring-1 ring-transparent hover:ring-primary/40"
                   >
                     <span
                       class="material-symbols-outlined text-primary text-[24px] mt-0.5"
                       >anchor</span
                     >
-                    <div class="min-w-0">
+                    <div class="min-w-0 flex-1">
                       <span
                         class="font-label-sm text-label-sm text-on-surface-variant uppercase block"
                         >Điểm xuất phát (Cảng bốc)</span
                       >
                       <span
+                        id="origin-name"
                         class="font-label-lg text-label-lg font-semibold text-on-surface block truncate"
                         >Bến Cảng Đoạn Xá</span
                       >
                       <span
+                        id="origin-sub"
                         class="font-body-sm text-body-sm text-on-surface-variant"
                         >Hải Phòng • Sông Cấm (Km 00+000)</span
                       >
                     </div>
-                  </div>
-                  <div
-                    class="p-space-sm rounded bg-surface-container-low flex items-start gap-space-sm"
+                    <span
+                      class="material-symbols-outlined text-outline text-[18px] shrink-0"
+                      >edit</span
+                    >
+                  </button>
+                  <button
+                    type="button"
+                    id="btn-pick-destination"
+                    class="text-left p-space-sm rounded bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-start gap-space-sm ring-1 ring-transparent hover:ring-secondary/40"
                   >
                     <span
                       class="material-symbols-outlined text-secondary text-[24px] mt-0.5"
                       >location_on</span
                     >
-                    <div class="min-w-0">
+                    <div class="min-w-0 flex-1">
                       <span
                         class="font-label-sm text-label-sm text-on-surface-variant uppercase block"
                         >Điểm dỡ hàng (Đích)</span
                       >
                       <span
+                        id="destination-name"
                         class="font-label-lg text-label-lg font-semibold text-on-surface block truncate"
                         >Bến Nhà Máy Phả Lại</span
                       >
                       <span
+                        id="destination-sub"
                         class="font-body-sm text-body-sm text-on-surface-variant"
                         >Hải Dương • Sông Kinh Thầy (Km 68+400)</span
                       >
                     </div>
-                  </div>
+                    <span
+                      class="material-symbols-outlined text-outline text-[18px] shrink-0"
+                      >edit</span
+                    >
+                  </button>
                 </div>
                 <!-- Mini Waypoint Vector Route Graphic -->
                 <div
@@ -849,6 +876,7 @@
                           00
                         </div>
                         <span
+                          id="wp-0-name"
                           class="font-label-sm text-label-sm text-on-surface font-medium mt-1"
                           >Đoạn Xá</span
                         >
@@ -894,6 +922,7 @@
                           68
                         </div>
                         <span
+                          id="wp-3-name"
                           class="font-label-sm text-label-sm text-on-surface font-semibold mt-1"
                           >Phả Lại</span
                         >
@@ -941,6 +970,7 @@
                         >schedule</span
                       >
                       <span
+                        id="etd-time"
                         class="font-headline-md text-headline-md text-on-surface"
                         >09:00</span
                       >
@@ -955,7 +985,7 @@
                       <span class="material-symbols-outlined text-[16px]"
                         >waves</span
                       >
-                      <span class=""
+                      <span id="etd-note" class=""
                         >Khuyến nghị: Rời bến 09:00 đón đỉnh triều Cửa Cấm lúc
                         10:15</span
                       >
@@ -973,6 +1003,7 @@
                         >flag</span
                       >
                       <span
+                        id="eta-time"
                         class="font-headline-md text-headline-md text-secondary"
                         >14:45</span
                       >
@@ -986,11 +1017,15 @@
                     >
                       <span class=""
                         >Tổng thời gian chạy:
-                        <strong class="text-on-surface">5h 45p</strong></span
+                        <strong id="run-duration" class="text-on-surface"
+                          >5h 45p</strong
+                        ></span
                       >
                       <span class=""
                         >Tốc độ TB:
-                        <strong class="text-on-surface">11.9 km/h</strong></span
+                        <strong id="run-speed" class="text-on-surface"
+                          >11.9 km/h</strong
+                        ></span
                       >
                     </div>
                   </div>
@@ -1017,6 +1052,7 @@
                     >
                   </div>
                   <span
+                    id="margin-badge"
                     class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold"
                     >Biên lãi: +35.1%</span
                   >
@@ -1028,10 +1064,12 @@
                   >
                     <div>
                       <span
+                        id="revenue-label"
                         class="font-label-sm text-label-sm text-on-surface-variant block"
                         >Ước tính doanh thu (400T × 138k)</span
                       >
                       <span
+                        id="revenue-value"
                         class="font-headline-md text-headline-md text-primary font-bold"
                         >55.200.000
                         <span
@@ -1054,6 +1092,7 @@
                         >Tổng chi phí dự kiến</span
                       >
                       <span
+                        id="cost-value"
                         class="font-headline-md text-headline-md text-error font-bold"
                         >35.800.000
                         <span
@@ -1076,6 +1115,7 @@
                         >LỢI NHUẬN RÒNG DỰ KIẾN</span
                       >
                       <span
+                        id="profit-value"
                         class="font-headline-md text-headline-md text-tertiary font-bold"
                         >+19.400.000
                         <span
@@ -1085,6 +1125,7 @@
                       >
                     </div>
                     <span
+                      id="profit-pct-badge"
                       class="px-space-xs py-1 rounded bg-tertiary text-on-tertiary font-label-sm text-label-sm font-semibold"
                       >+35.1%</span
                     >
@@ -1096,7 +1137,9 @@
                     class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant"
                   >
                     <span class="">Cơ cấu cấu thành chi phí:</span>
-                    <span class="font-medium text-on-surface"
+                    <span
+                      id="cost-total-inline"
+                      class="font-medium text-on-surface"
                       >35.800.000 đ</span
                     >
                   </div>
@@ -1130,9 +1173,11 @@
                     >
                       <span class="flex items-center gap-1"
                         ><span class="w-2 h-2 rounded-full bg-primary"></span
-                        >Dầu (820L)</span
+                        >Dầu (<span id="fuel-liters">820</span>L)</span
                       >
-                      <strong class="text-on-surface font-semibold"
+                      <strong
+                        id="fuel-cost"
+                        class="text-on-surface font-semibold"
                         >17.63tr</strong
                       >
                     </div>
@@ -1219,6 +1264,7 @@
                         stroke-width="3.5"
                       ></path>
                       <path
+                        id="safety-ring"
                         class="text-tertiary"
                         d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                         fill="none"
@@ -1232,6 +1278,7 @@
                       class="absolute inset-0 flex flex-col items-center justify-center"
                     >
                       <span
+                        id="safety-score"
                         class="font-headline-sm text-headline-sm text-tertiary font-bold leading-none"
                         >94</span
                       >
@@ -1393,272 +1440,10 @@
                   triều thực tế, mức mớn nước an toàn và tối ưu hóa lợi nhuận
                   P&amp;L:
                 </p>
-                <div class="flex flex-col gap-space-sm">
-                  <!-- Scenario A: Selected -->
-                  <div
-                    class="p-space-sm rounded-lg border-2 border-secondary bg-surface-container-low/60 shadow-sm relative"
-                  >
-                    <div
-                      class="flex items-start justify-between gap-space-xs mb-1"
-                    >
-                      <div class="flex items-center gap-space-xs">
-                        <span
-                          class="w-4 h-4 rounded-full border-4 border-secondary bg-surface-container-lowest flex items-center justify-center shrink-0"
-                        ></span
-                        ><span
-                          class="font-headline-sm text-[16px] text-primary font-bold"
-                          >Phương án A: Đón Đỉnh Triều &amp; Giữ Đủ Tải
-                          (400T)</span
-                        >
-                      </div>
-                      <span
-                        class="px-2 py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-[10px] font-bold uppercase tracking-wider shrink-0"
-                        >Khuyến Nghị AI</span
-                      >
-                    </div>
-                    <p
-                      class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs pl-6"
-                    >
-                      Khởi hành 09:00 đón đỉnh triều Cửa Cấm (10:15) và vượt cạn
-                      Sông Kinh Thầy lúc 11:45 với mớn nước hở an toàn +40cm.
-                    </p>
-                    <div
-                      class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs pl-6 py-space-xs"
-                    >
-                      <div
-                        class="bg-surface-container-lowest p-space-xs rounded"
-                      >
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Lợi nhuận</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-tertiary font-bold"
-                          >+19.4tr
-                          <span class="text-[11px] font-semibold"
-                            >(+35.1%)</span
-                          ></span
-                        >
-                      </div>
-                      <div
-                        class="bg-surface-container-lowest p-space-xs rounded"
-                      >
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Thời gian chạy</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-on-surface font-semibold"
-                          >5h 45p</span
-                        >
-                      </div>
-                      <div
-                        class="bg-surface-container-lowest p-space-xs rounded"
-                      >
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Mức an toàn</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-tertiary font-bold"
-                          >94/100 (Thấp)</span
-                        >
-                      </div>
-                      <div
-                        class="bg-surface-container-lowest p-space-xs rounded"
-                      >
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Nhiên liệu</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-on-surface font-semibold"
-                          >820L dầu</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-center justify-between pl-6 pt-space-xs mt-1"
-                    >
-                      <span
-                        class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1"
-                        ><span class="material-symbols-outlined text-[16px]"
-                          >check_circle</span
-                        >
-                        Đang áp dụng cho chuyến này</span
-                      ><button
-                        type="button"
-                        class="px-space-sm py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold shadow-sm"
-                      >
-                        Đã chọn
-                      </button>
-                    </div>
-                  </div>
-                  <!-- Scenario B -->
-                  <div
-                    class="p-space-sm rounded-lg border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low transition-colors relative"
-                  >
-                    <div
-                      class="flex items-start justify-between gap-space-xs mb-1"
-                    >
-                      <div class="flex items-center gap-space-xs">
-                        <span
-                          class="w-4 h-4 rounded-full border border-outline-variant bg-surface-container-lowest shrink-0"
-                        ></span
-                        ><span
-                          class="font-headline-sm text-[16px] text-on-surface font-semibold"
-                          >Phương án B: Giảm Tải Vượt Cạn Sớm (320T)</span
-                        >
-                      </div>
-                      <span
-                        class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px] font-semibold uppercase tracking-wider shrink-0"
-                        >Rủi Ro Cực Thấp</span
-                      >
-                    </div>
-                    <p
-                      class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs pl-6"
-                    >
-                      Khởi hành ngay lúc 07:30, hạ bớt 80T tải để mớn cạn chỉ
-                      2.15m vượt mọi điểm nông trước triều rút.
-                    </p>
-                    <div
-                      class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs pl-6 py-space-xs"
-                    >
-                      <div class="bg-surface-container-low p-space-xs rounded">
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Lợi nhuận</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-primary font-bold"
-                          >+12.6tr
-                          <span class="text-[11px] font-semibold"
-                            >(+26.8%)</span
-                          ></span
-                        >
-                      </div>
-                      <div class="bg-surface-container-low p-space-xs rounded">
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Thời gian chạy</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-on-surface font-semibold"
-                          >4h 30p</span
-                        >
-                      </div>
-                      <div class="bg-surface-container-low p-space-xs rounded">
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Mức an toàn</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-tertiary font-bold"
-                          >98/100</span
-                        >
-                      </div>
-                      <div class="bg-surface-container-low p-space-xs rounded">
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Nhiên liệu</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-on-surface font-semibold"
-                          >690L dầu</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-center justify-between pl-6 pt-space-xs mt-1"
-                    >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >Sản lượng giao thấp hơn 20%</span
-                      ><button
-                        type="button"
-                        class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-colors"
-                      >
-                        Áp dụng kịch bản
-                      </button>
-                    </div>
-                  </div>
-                  <!-- Scenario C -->
-                  <div
-                    class="p-space-sm rounded-lg border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low transition-colors relative"
-                  >
-                    <div
-                      class="flex items-start justify-between gap-space-xs mb-1"
-                    >
-                      <div class="flex items-center gap-space-xs">
-                        <span
-                          class="w-4 h-4 rounded-full border border-outline-variant bg-surface-container-lowest shrink-0"
-                        ></span
-                        ><span
-                          class="font-headline-sm text-[16px] text-on-surface font-semibold"
-                          >Phương án C: Chạy Tốc Độ Tối Đa (Max Speed)</span
-                        >
-                      </div>
-                      <span
-                        class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px] font-semibold uppercase tracking-wider shrink-0"
-                        >Giao Hỏa Tốc</span
-                      >
-                    </div>
-                    <p
-                      class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs pl-6"
-                    >
-                      Giữ nguyên 400T tải, tăng công suất máy đạt 16.5 km/h, đến
-                      đích trước 14:05 (tiết kiệm 40 phút) kèm phụ thu dầu.
-                    </p>
-                    <div
-                      class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs pl-6 py-space-xs"
-                    >
-                      <div class="bg-surface-container-low p-space-xs rounded">
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Lợi nhuận</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-primary font-bold"
-                          >+17.6tr
-                          <span class="text-[11px] font-semibold"
-                            >(+31.8%)</span
-                          ></span
-                        >
-                      </div>
-                      <div class="bg-surface-container-low p-space-xs rounded">
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Thời gian chạy</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-on-surface font-semibold"
-                          >5h 05p (-40p)</span
-                        >
-                      </div>
-                      <div class="bg-surface-container-low p-space-xs rounded">
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Mức an toàn</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-on-surface font-bold"
-                          >89/100</span
-                        >
-                      </div>
-                      <div class="bg-surface-container-low p-space-xs rounded">
-                        <span
-                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
-                          >Nhiên liệu</span
-                        ><span
-                          class="font-headline-sm text-[15px] text-error font-semibold"
-                          >920L (+1.8tr)</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-center justify-between pl-6 pt-space-xs mt-1"
-                    >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant"
-                        >Áp dụng khi cần giải phóng bến gấp</span
-                      ><button
-                        type="button"
-                        class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-colors"
-                      >
-                        Áp dụng kịch bản
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <div
+                  id="scenario-list"
+                  class="flex flex-col gap-space-sm"
+                ></div>
               </div>
             </div>
           </div>
@@ -1695,10 +1480,12 @@
                 Quay lại B.2
               </button>
               <button
+                id="btn-issue"
                 class="px-space-lg py-space-xs rounded bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg font-semibold shadow-sm transition-colors flex items-center gap-space-xs"
                 type="button"
               >
-                <span class="">Phát Hành Phiếu Điều Hành (Kịch Bản A)</span
+                <span id="btn-issue-label" class=""
+                  >Phát Hành Phiếu Điều Hành (Kịch Bản A)</span
                 ><span class="material-symbols-outlined text-[18px]"
                   >arrow_forward</span
                 >
@@ -1741,5 +1528,564 @@
         </div>
       </div>
     </footer>
+
+    <!-- ===================== MODALS ===================== -->
+    <div
+      id="modal-backdrop"
+      class="fixed inset-0 z-[100] hidden items-center justify-center bg-[rgba(11,28,48,0.45)] p-space-md"
+    >
+      <div
+        id="modal-panel"
+        class="w-full max-w-lg max-h-[85vh] overflow-y-auto bg-surface-container-lowest rounded-lg shadow-xl p-space-md flex flex-col gap-space-sm"
+      >
+        <div class="flex items-center justify-between">
+          <h2
+            id="modal-title"
+            class="font-headline-sm text-headline-sm text-on-surface"
+          >
+            Tiêu đề
+          </h2>
+          <button
+            id="modal-close"
+            type="button"
+            class="p-1 rounded hover:bg-surface-container text-on-surface-variant"
+          >
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div id="modal-body" class="flex flex-col gap-space-xs"></div>
+      </div>
+    </div>
+
+    <script>
+      // ---------------------------------------------------------------
+      // Dữ liệu mẫu: Phương tiện, Cảng/Bến, Kịch bản
+      // ---------------------------------------------------------------
+      const VESSELS = [
+        {
+          id: "HP-9182",
+          name: "HP-9182",
+          type: "Sà lan tự hành mui trần",
+          dwt: 450,
+          draft: 2.45,
+          airDraft: 6.8,
+          speed: 14,
+          img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0iyQ9T2FBXW-ztTYmxAwagB2Ewh7TiM1Wy_S4u7osCTV9ybpTgmdBq-eyvIboCUyP5Y65eoMQatfxFq0PxCD9P9nH-Hz_Yn6P7XvO44QnHru7LLFhuw3go_W5pohGb9TaytQOA3ysBOgDcRFFzVj40RAJ2No4Ypzo8zNLdXYaHYi4GwwdBcss9YREqw7WTtyEmvqVWEh167oqgf3LdKf766P6CkO0Xs-a1ypmD70RtINVLBf_RAsr",
+        },
+        {
+          id: "HP-7745",
+          name: "HP-7745",
+          type: "Sà lan tự hành boong kín",
+          dwt: 600,
+          draft: 2.8,
+          airDraft: 6.2,
+          speed: 12,
+          img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0iyQ9T2FBXW-ztTYmxAwagB2Ewh7TiM1Wy_S4u7osCTV9ybpTgmdBq-eyvIboCUyP5Y65eoMQatfxFq0PxCD9P9nH-Hz_Yn6P7XvO44QnHru7LLFhuw3go_W5pohGb9TaytQOA3ysBOgDcRFFzVj40RAJ2No4Ypzo8zNLdXYaHYi4GwwdBcss9YREqw7WTtyEmvqVWEh167oqgf3LdKf766P6CkO0Xs-a1ypmD70RtINVLBf_RAsr",
+        },
+        {
+          id: "QN-3390",
+          name: "QN-3390",
+          type: "Tàu chở container ven biển",
+          dwt: 800,
+          draft: 3.1,
+          airDraft: 5.9,
+          speed: 16,
+          img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0iyQ9T2FBXW-ztTYmxAwagB2Ewh7TiM1Wy_S4u7osCTV9ybpTgmdBq-eyvIboCUyP5Y65eoMQatfxFq0PxCD9P9nH-Hz_Yn6P7XvO44QnHru7LLFhuw3go_W5pohGb9TaytQOA3ysBOgDcRFFzVj40RAJ2No4Ypzo8zNLdXYaHYi4GwwdBcss9YREqw7WTtyEmvqVWEh167oqgf3LdKf766P6CkO0Xs-a1ypmD70RtINVLBf_RAsr",
+        },
+        {
+          id: "HD-5521",
+          name: "HD-5521",
+          type: "Sà lan chở hàng rời cỡ nhỏ",
+          dwt: 320,
+          draft: 2.1,
+          airDraft: 7.4,
+          speed: 13,
+          img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0iyQ9T2FBXW-ztTYmxAwagB2Ewh7TiM1Wy_S4u7osCTV9ybpTgmdBq-eyvIboCUyP5Y65eoMQatfxFq0PxCD9P9nH-Hz_Yn6P7XvO44QnHru7LLFhuw3go_W5pohGb9TaytQOA3ysBOgDcRFFzVj40RAJ2No4Ypzo8zNLdXYaHYi4GwwdBcss9YREqw7WTtyEmvqVWEh167oqgf3LdKf766P6CkO0Xs-a1ypmD70RtINVLBf_RAsr",
+        },
+      ];
+
+      const PORTS = [
+        {
+          id: "doan-xa",
+          name: "Bến Cảng Đoạn Xá",
+          sub: "Hải Phòng • Sông Cấm (Km 00+000)",
+          short: "Đoạn Xá",
+        },
+        {
+          id: "pha-lai",
+          name: "Bến Nhà Máy Phả Lại",
+          sub: "Hải Dương • Sông Kinh Thầy (Km 68+400)",
+          short: "Phả Lại",
+        },
+        {
+          id: "ninh-phuc",
+          name: "Cảng Ninh Phúc",
+          sub: "Ninh Bình • Sông Đáy (Km 92+200)",
+          short: "Ninh Phúc",
+        },
+        {
+          id: "viet-tri",
+          name: "Cảng Việt Trì",
+          sub: "Phú Thọ • Sông Lô (Km 74+000)",
+          short: "Việt Trì",
+        },
+        {
+          id: "khuyen-luong",
+          name: "Cảng Khuyến Lương",
+          sub: "Hà Nội • Sông Hồng (Km 15+300)",
+          short: "Khuyến Lương",
+        },
+        {
+          id: "hoang-thach",
+          name: "Bến Nhà Máy Hoàng Thạch",
+          sub: "Hải Dương • Sông Kinh Thầy (Km 55+700)",
+          short: "Hoàng Thạch",
+        },
+      ];
+
+      const SCENARIOS = [
+        {
+          key: "A",
+          title: "Phương án A: Đón Đỉnh Triều & Giữ Đủ Tải (400T)",
+          tag: "Khuyến Nghị AI",
+          tagClass: "bg-tertiary text-on-tertiary",
+          desc: "Khởi hành 09:00 đón đỉnh triều Cửa Cấm (10:15) và vượt cạn Sông Kinh Thầy lúc 11:45 với mớn nước hở an toàn +40cm.",
+          profit: "+19.4tr",
+          profitPct: "(+35.1%)",
+          duration: "5h 45p",
+          durationRaw: "5h 45p",
+          safety: "94/100 (Thấp)",
+          safetyScore: 94,
+          fuel: "820L dầu",
+          fuelLiters: 820,
+          footNote: "Đang áp dụng cho chuyến này",
+          etd: "09:00",
+          eta: "14:45",
+          revenue: 55200000,
+          cost: 35800000,
+          profitValue: 19400000,
+          profitPctValue: 35.1,
+          fuelCost: "17.63tr",
+        },
+        {
+          key: "B",
+          title: "Phương án B: Giảm Tải Vượt Cạn Sớm (320T)",
+          tag: "Rủi Ro Cực Thấp",
+          tagClass: "bg-surface-container text-on-surface-variant",
+          desc: "Khởi hành ngay lúc 07:30, hạ bớt 80T tải để mớn cạn chỉ 2.15m vượt mọi điểm nông trước triều rút.",
+          profit: "+12.6tr",
+          profitPct: "(+26.8%)",
+          duration: "4h 30p",
+          durationRaw: "4h 30p",
+          safety: "98/100",
+          safetyScore: 98,
+          fuel: "690L dầu",
+          fuelLiters: 690,
+          footNote: "Sản lượng giao thấp hơn 20%",
+          etd: "07:30",
+          eta: "12:00",
+          revenue: 44160000,
+          cost: 31560000,
+          profitValue: 12600000,
+          profitPctValue: 26.8,
+          fuelCost: "14.85tr",
+        },
+        {
+          key: "C",
+          title: "Phương án C: Chạy Tốc Độ Tối Đa (Max Speed)",
+          tag: "Giao Hỏa Tốc",
+          tagClass: "bg-surface-container text-on-surface-variant",
+          desc: "Giữ nguyên 400T tải, tăng công suất máy đạt 16.5 km/h, đến đích trước 14:05 (tiết kiệm 40 phút) kèm phụ thu dầu.",
+          profit: "+17.6tr",
+          profitPct: "(+31.8%)",
+          duration: "5h 05p (-40p)",
+          durationRaw: "5h 05p",
+          safety: "89/100",
+          safetyScore: 89,
+          fuel: "920L (+1.8tr)",
+          fuelLiters: 920,
+          footNote: "Áp dụng khi cần giải phóng bến gấp",
+          etd: "09:00",
+          eta: "14:05",
+          revenue: 55200000,
+          cost: 37600000,
+          profitValue: 17600000,
+          profitPctValue: 31.8,
+          fuelCost: "19.83tr",
+        },
+      ];
+
+      // ---------------------------------------------------------------
+      // Trạng thái hiện tại
+      // ---------------------------------------------------------------
+      const state = {
+        vesselId: "HP-9182",
+        originId: "doan-xa",
+        destinationId: "pha-lai",
+        scenarioKey: "A",
+      };
+
+      function fmtVnd(n) {
+        return n.toLocaleString("vi-VN");
+      }
+
+      // ---------------------------------------------------------------
+      // Modal helpers
+      // ---------------------------------------------------------------
+      const backdrop = document.getElementById("modal-backdrop");
+      const modalTitle = document.getElementById("modal-title");
+      const modalBody = document.getElementById("modal-body");
+
+      function openModal(title, bodyHtml) {
+        modalTitle.textContent = title;
+        modalBody.innerHTML = bodyHtml;
+        backdrop.classList.remove("hidden");
+        backdrop.classList.add("flex");
+      }
+      function closeModal() {
+        backdrop.classList.add("hidden");
+        backdrop.classList.remove("flex");
+        modalBody.innerHTML = "";
+      }
+      document
+        .getElementById("modal-close")
+        .addEventListener("click", closeModal);
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) closeModal();
+      });
+
+      // ---------------------------------------------------------------
+      // 1) ĐỔI PHƯƠNG TIỆN
+      // ---------------------------------------------------------------
+      document
+        .getElementById("btn-change-vessel")
+        .addEventListener("click", () => {
+          const rows = VESSELS.map((v) => {
+            const active = v.id === state.vesselId;
+            return `
+            <button type="button" data-vessel-id="${v.id}"
+              class="vessel-option text-left flex items-center gap-space-sm p-space-sm rounded ${
+                active
+                  ? "bg-primary-container/20 ring-1 ring-primary"
+                  : "bg-surface-container-low hover:bg-surface-container-high"
+              } transition-colors">
+              <img src="${
+                v.img
+              }" class="w-16 h-12 object-cover rounded shrink-0" />
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-space-xs">
+                  <span class="font-label-lg text-label-lg font-semibold text-on-surface">${
+                    v.name
+                  }</span>
+                  ${
+                    active
+                      ? '<span class="px-1.5 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-[10px] font-bold">ĐANG DÙNG</span>'
+                      : ""
+                  }
+                </div>
+                <span class="font-body-sm text-body-sm text-on-surface-variant block truncate">${
+                  v.type
+                }</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">${
+                  v.dwt
+                } DWT • Mớn ${v.draft.toFixed(
+              2
+            )}m • Tĩnh không ${v.airDraft.toFixed(2)}m • ${v.speed} km/h</span>
+              </div>
+            </button>`;
+          }).join("");
+          openModal("Chọn phương tiện thủy", rows);
+
+          modalBody.querySelectorAll(".vessel-option").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              state.vesselId = btn.dataset.vesselId;
+              renderVessel();
+              closeModal();
+            });
+          });
+        });
+
+      function renderVessel() {
+        const v = VESSELS.find((x) => x.id === state.vesselId) || VESSELS[0];
+        document.getElementById("vessel-img").src = v.img;
+        document.getElementById("vessel-name").textContent = v.name;
+        document.getElementById("vessel-type").textContent = v.type;
+        document.getElementById("vessel-dwt").textContent = v.dwt;
+        document.getElementById("vessel-draft").textContent =
+          v.draft.toFixed(2);
+        document.getElementById("vessel-air-draft").textContent =
+          v.airDraft.toFixed(2);
+        document.getElementById("vessel-speed").textContent = v.speed;
+        document.getElementById("stepper-vessel").textContent = "Tàu " + v.name;
+      }
+
+      // ---------------------------------------------------------------
+      // 2) CHỌN ĐIỂM ĐI / ĐIỂM ĐẾN
+      // ---------------------------------------------------------------
+      function openPortPicker(kind) {
+        // kind: "origin" | "destination"
+        const currentId =
+          kind === "origin" ? state.originId : state.destinationId;
+        const otherId =
+          kind === "origin" ? state.destinationId : state.originId;
+        const rows = PORTS.map((p) => {
+          const active = p.id === currentId;
+          const disabled = p.id === otherId;
+          return `
+            <button type="button" data-port-id="${p.id}" ${
+            disabled ? "disabled" : ""
+          }
+              class="port-option text-left flex items-start gap-space-sm p-space-sm rounded ${
+                active
+                  ? "bg-primary-container/20 ring-1 ring-primary"
+                  : disabled
+                  ? "opacity-40 cursor-not-allowed bg-surface-container-low"
+                  : "bg-surface-container-low hover:bg-surface-container-high"
+              } transition-colors">
+              <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">location_on</span>
+              <div class="min-w-0 flex-1">
+                <span class="font-label-lg text-label-lg font-semibold text-on-surface block">${
+                  p.name
+                }</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">${
+                  p.sub
+                }</span>
+              </div>
+              ${
+                active
+                  ? '<span class="px-1.5 py-0.5 h-fit rounded-full bg-primary text-on-primary font-label-sm text-[10px] font-bold shrink-0">ĐANG CHỌN</span>'
+                  : ""
+              }
+              ${
+                disabled
+                  ? '<span class="font-label-sm text-[10px] text-on-surface-variant shrink-0">Đã là điểm kia</span>'
+                  : ""
+              }
+            </button>`;
+        }).join("");
+        openModal(
+          kind === "origin"
+            ? "Chọn điểm xuất phát (cảng bốc)"
+            : "Chọn điểm dỡ hàng (đích)",
+          rows
+        );
+
+        modalBody
+          .querySelectorAll(".port-option:not([disabled])")
+          .forEach((btn) => {
+            btn.addEventListener("click", () => {
+              if (kind === "origin") state.originId = btn.dataset.portId;
+              else state.destinationId = btn.dataset.portId;
+              renderRoute();
+              closeModal();
+            });
+          });
+      }
+
+      document
+        .getElementById("btn-pick-origin")
+        .addEventListener("click", () => openPortPicker("origin"));
+      document
+        .getElementById("btn-pick-destination")
+        .addEventListener("click", () => openPortPicker("destination"));
+
+      function renderRoute() {
+        const o = PORTS.find((p) => p.id === state.originId);
+        const d = PORTS.find((p) => p.id === state.destinationId);
+        document.getElementById("origin-name").textContent = o.name;
+        document.getElementById("origin-sub").textContent = o.sub;
+        document.getElementById("destination-name").textContent = d.name;
+        document.getElementById("destination-sub").textContent = d.sub;
+        document.getElementById("wp-0-name").textContent = o.short;
+        document.getElementById("wp-3-name").textContent = d.short;
+        document.getElementById("stepper-route").textContent =
+          o.short + " - " + d.short;
+      }
+
+      // ---------------------------------------------------------------
+      // 3) THAY ĐỔI PHƯƠNG ÁN (Kịch bản A/B/C)
+      // ---------------------------------------------------------------
+      function renderScenarios() {
+        const list = document.getElementById("scenario-list");
+        list.innerHTML = SCENARIOS.map((s) => {
+          const active = s.key === state.scenarioKey;
+          return `
+          <div class="scenario-card p-space-sm rounded-lg border-2 ${
+            active
+              ? "border-secondary bg-surface-container-low/60 shadow-sm"
+              : "border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low"
+          } transition-colors relative" data-scenario-key="${s.key}">
+            <div class="flex items-start justify-between gap-space-xs mb-1">
+              <div class="flex items-center gap-space-xs">
+                <span class="w-4 h-4 rounded-full ${
+                  active
+                    ? "border-4 border-secondary bg-surface-container-lowest"
+                    : "border border-outline-variant bg-surface-container-lowest"
+                } shrink-0"></span>
+                <span class="font-headline-sm text-[16px] ${
+                  active
+                    ? "text-primary font-bold"
+                    : "text-on-surface font-semibold"
+                }">${s.title}</span>
+              </div>
+              <span class="px-2 py-0.5 rounded-full ${
+                s.tagClass
+              } font-label-sm text-[10px] font-bold uppercase tracking-wider shrink-0">${
+            s.tag
+          }</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs pl-6">${
+              s.desc
+            }</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs pl-6 py-space-xs">
+              <div class="${
+                active
+                  ? "bg-surface-container-lowest"
+                  : "bg-surface-container-low"
+              } p-space-xs rounded">
+                <span class="font-label-sm text-[10px] text-on-surface-variant block uppercase">Lợi nhuận</span>
+                <span class="font-headline-sm text-[15px] ${
+                  active ? "text-tertiary" : "text-primary"
+                } font-bold">${
+            s.profit
+          } <span class="text-[11px] font-semibold">${s.profitPct}</span></span>
+              </div>
+              <div class="${
+                active
+                  ? "bg-surface-container-lowest"
+                  : "bg-surface-container-low"
+              } p-space-xs rounded">
+                <span class="font-label-sm text-[10px] text-on-surface-variant block uppercase">Thời gian chạy</span>
+                <span class="font-headline-sm text-[15px] text-on-surface font-semibold">${
+                  s.duration
+                }</span>
+              </div>
+              <div class="${
+                active
+                  ? "bg-surface-container-lowest"
+                  : "bg-surface-container-low"
+              } p-space-xs rounded">
+                <span class="font-label-sm text-[10px] text-on-surface-variant block uppercase">Mức an toàn</span>
+                <span class="font-headline-sm text-[15px] ${
+                  s.safetyScore >= 94
+                    ? "text-tertiary font-bold"
+                    : "text-on-surface font-bold"
+                }">${s.safety}</span>
+              </div>
+              <div class="${
+                active
+                  ? "bg-surface-container-lowest"
+                  : "bg-surface-container-low"
+              } p-space-xs rounded">
+                <span class="font-label-sm text-[10px] text-on-surface-variant block uppercase">Nhiên liệu</span>
+                <span class="font-headline-sm text-[15px] ${
+                  s.key === "C" ? "text-error" : "text-on-surface"
+                } font-semibold">${s.fuel}</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pl-6 pt-space-xs mt-1">
+              <span class="font-label-sm text-label-sm ${
+                active
+                  ? "text-secondary font-semibold flex items-center gap-1"
+                  : "text-on-surface-variant"
+              }">
+                ${
+                  active
+                    ? '<span class="material-symbols-outlined text-[16px]">check_circle</span> '
+                    : ""
+                }${s.footNote}
+              </span>
+              <button type="button" class="apply-scenario-btn ${
+                active
+                  ? "px-space-sm py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold shadow-sm"
+                  : "px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-colors"
+              }" data-scenario-key="${s.key}" ${active ? "disabled" : ""}>
+                ${active ? "Đã chọn" : "Áp dụng kịch bản"}
+              </button>
+            </div>
+          </div>`;
+        }).join("");
+
+        list
+          .querySelectorAll(".apply-scenario-btn:not([disabled])")
+          .forEach((btn) => {
+            btn.addEventListener("click", () => {
+              state.scenarioKey = btn.dataset.scenarioKey;
+              renderScenarios();
+              renderScenarioEffects();
+            });
+          });
+      }
+
+      function renderScenarioEffects() {
+        const s = SCENARIOS.find((x) => x.key === state.scenarioKey);
+
+        // Footer + stepper
+        document.getElementById("btn-issue-label").textContent =
+          "Phát Hành Phiếu Điều Hành (Kịch Bản " + s.key + ")";
+        document.getElementById("stepper-scenario").textContent =
+          "Kịch bản " + s.key + " đã chọn";
+        document.getElementById("stepper-pnl").textContent =
+          s.profit + " (" + s.profitPctValue.toFixed(0) + "%)";
+        document.getElementById("stepper-safety").textContent =
+          s.safetyScore + " Điểm an toàn";
+
+        // Step 4 schedule
+        document.getElementById("etd-time").textContent = s.etd;
+        document.getElementById("eta-time").textContent = s.eta;
+        document.getElementById("run-duration").textContent = s.durationRaw;
+        document.getElementById("run-speed").textContent =
+          (68.4 / parseDurationHours(s.durationRaw)).toFixed(1) + " km/h";
+        document.getElementById("etd-note").textContent =
+          s.key === "A"
+            ? "Khuyến nghị: Rời bến 09:00 đón đỉnh triều Cửa Cấm lúc 10:15"
+            : s.key === "B"
+            ? "Rời bến sớm 07:30 để vượt cạn trước khi triều rút"
+            : "Chạy tối đa công suất để rút ngắn hành trình 40 phút";
+
+        // Step 5 P&L
+        document.getElementById("margin-badge").textContent =
+          "Biên lãi: " + s.profitPct.replace(/[()]/g, "");
+        document.getElementById("revenue-value").innerHTML =
+          fmtVnd(s.revenue) +
+          ' <span class="font-label-md text-label-md font-normal text-on-surface-variant">đ</span>';
+        document.getElementById("cost-value").innerHTML =
+          fmtVnd(s.cost) +
+          ' <span class="font-label-md text-label-md font-normal text-on-surface-variant">đ</span>';
+        document.getElementById("profit-value").innerHTML =
+          "+" +
+          fmtVnd(s.profitValue) +
+          ' <span class="font-label-md text-label-md font-normal text-on-surface-variant">đ</span>';
+        document.getElementById("profit-pct-badge").textContent =
+          s.profitPct.replace(/[()]/g, "");
+        document.getElementById("cost-total-inline").textContent =
+          fmtVnd(s.cost) + " đ";
+        document.getElementById("fuel-liters").textContent = s.fuelLiters;
+        document.getElementById("fuel-cost").textContent = s.fuelCost;
+
+        // Step 6 safety ring
+        document.getElementById("safety-score").textContent = s.safetyScore;
+        document
+          .getElementById("safety-ring")
+          .setAttribute("stroke-dasharray", s.safetyScore + ", 100");
+      }
+
+      function parseDurationHours(str) {
+        // "5h 45p" -> 5.75
+        const m = str.match(/(\d+)h\s*(\d+)?p?/);
+        if (!m) return 1;
+        const h = parseInt(m[1], 10) || 0;
+        const min = parseInt(m[2], 10) || 0;
+        return h + min / 60;
+      }
+
+      // ---------------------------------------------------------------
+      // Init
+      // ---------------------------------------------------------------
+      renderVessel();
+      renderRoute();
+      renderScenarios();
+      renderScenarioEffects();
+    </script>
   </body>
 </html>
