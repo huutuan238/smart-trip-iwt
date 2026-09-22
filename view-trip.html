@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&amp;family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#222a3d",
+              "secondary-fixed-dim": "#4cd7f6",
+              "surface-panel": "#1E293B",
+              "on-tertiary-fixed-variant": "#005236",
+              "on-primary-container": "#002c47",
+              outline: "#89929b",
+              "electric-blue": "#2563EB",
+              "on-secondary-fixed": "#001f26",
+              "shoal-coral": "#EF4444",
+              "on-background": "#dae2fd",
+              "surface-bright": "#31394d",
+              "on-secondary-fixed-variant": "#004e5c",
+              "seafoam-teal": "#14B8A6",
+              background: "#0b1326",
+              "on-error-container": "#ffdad6",
+              "maritime-emerald": "#10B981",
+              "surface-container": "#171f33",
+              "on-surface-variant": "#bfc7d2",
+              "primary-fixed": "#cce5ff",
+              "inverse-surface": "#dae2fd",
+              "surface-highlight": "#334155",
+              "surface-tint": "#93ccff",
+              error: "#ffb4ab",
+              primary: "#93ccff",
+              "on-primary": "#003351",
+              "surface-variant": "#2d3449",
+              "on-tertiary-fixed": "#002113",
+              "text-muted": "#94A3B8",
+              "inverse-primary": "#006398",
+              "on-secondary-container": "#00424e",
+              tertiary: "#4edea3",
+              "tertiary-fixed-dim": "#4edea3",
+              "tertiary-container": "#00a572",
+              "on-error": "#690005",
+              "on-primary-fixed": "#001d31",
+              surface: "#0b1326",
+              "on-tertiary": "#003824",
+              "on-secondary": "#003640",
+              "cyan-telemetry": "#06B6D4",
+              "tide-amber": "#F59E0B",
+              "inverse-on-surface": "#283044",
+              "surface-container-low": "#131b2e",
+              "abyss-canvas": "#070D18",
+              "outline-variant": "#3f4850",
+              "surface-deck": "#0F172A",
+              "tertiary-fixed": "#6ffbbe",
+              "surface-container-highest": "#2d3449",
+              "on-tertiary-container": "#00311f",
+              "primary-container": "#3198dc",
+              "surface-dim": "#0b1326",
+              "text-radar": "#F8FAFC",
+              "primary-fixed-dim": "#93ccff",
+              "surface-container-lowest": "#060e20",
+              "chart-grid": "rgba(148, 163, 184, 0.12)",
+              "secondary-container": "#03b5d3",
+              "on-primary-fixed-variant": "#004b73",
+              "on-surface": "#dae2fd",
+              secondary: "#4cd7f6",
+              "secondary-fixed": "#acedff",
+              "error-container": "#93000a",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              gutter: "1rem",
+              "space-xl": "2rem",
+              "space-md": "0.75rem",
+              "gutter-dense": "0.5rem",
+              "space-sm": "0.5rem",
+              margin: "1.5rem",
+              "space-xs": "0.25rem",
+              "space-lg": "1.25rem",
+              "margin-compact": "1rem",
+            },
+            fontFamily: {
+              "display-sm": ["Space Grotesk"],
+              "body-sm": ["Hanken Grotesk"],
+              "body-lg": ["Hanken Grotesk"],
+              "headline-lg-mobile": ["Space Grotesk"],
+              "headline-sm": ["Space Grotesk"],
+              "display-lg": ["Space Grotesk"],
+              "label-md": ["JetBrains Mono"],
+              "headline-lg": ["Space Grotesk"],
+              "body-md": ["Hanken Grotesk"],
+              "label-lg": ["JetBrains Mono"],
+              "label-sm": ["JetBrains Mono"],
+            },
+            fontSize: {
+              "display-sm": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-sm": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "body-lg": [
+                "16px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              "headline-lg-mobile": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-sm": [
+                "18px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" },
+              ],
+              "display-lg": [
+                "40px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": [
+                "14px",
+                { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "500",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"
+  >
+    <header
+      class="fixed top-0 w-full z-50 bg-surface-deck/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"
+    >
+      <div
+        class="h-16 w-full px-margin flex items-center justify-between gap-gutter"
+      >
+        <div class="flex items-center gap-space-lg shrink-0">
+          <div class="flex items-center gap-space-sm">
+            <img
+              alt="SmartTrip IWT Logo"
+              class="h-8 w-auto object-contain"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1U-TUVSOAVm8lh5vTfAJeov3eiuLwyJLsd5cJjEJ7MKvfZ3dR1g6xCY5mMoaKrxEch1YFOlmREVtkdA7nbUpc9es4BXTWtxmUQ7EeFFcT_J6BXqhOukEMiNNV5aTvKP48zI5oHZVSM0ftpEMpDZYPwWwIr7Hu0vUFh1Qz38k_NQz0irHknNPP27Xfei__arrnuhQGa_7hGkWa5ERW-Pd9BuXx3d5o95hIymjy96lN5sNW5tg54U9iKN6A"
+            />
+            <div class="flex flex-col">
+              <span
+                class="font-headline-sm text-headline-sm text-text-radar tracking-tight"
+                >SmartTrip IWT</span
+              ><span
+                class="font-label-sm text-label-sm text-secondary tracking-wider uppercase"
+                >Inland Waterway Ops</span
+              >
+            </div>
+          </div>
+          <div
+            class="hidden xl:flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.2)]"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-maritime-emerald animate-pulse"
+            ></span
+            ><span class="font-label-sm text-label-sm text-on-surface-variant"
+              >AIS/GPS:</span
+            ><span
+              class="font-label-sm text-label-sm text-maritime-emerald font-semibold"
+              >TRỰC TUYẾN (98.4%)</span
+            ><span class="text-outline-variant font-label-sm text-label-sm"
+              >|</span
+            ><span class="font-label-sm text-label-sm text-on-surface-variant"
+              >KT-TV ĐTNĐ:</span
+            ><span class="font-label-sm text-label-sm text-cyan-telemetry"
+              >TRIỀU CƯỜNG (+1.82m)</span
+            >
+          </div>
+        </div>
+        <nav
+          class="hidden lg:flex items-center gap-space-xs bg-surface-container-low/80 p-space-xs rounded-xl"
+          data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl shadow-[0_0_12px_rgba(2,132,199,0.3)]"
+        >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface px-space-md py-space-sm rounded-xl transition-all"
+            data-path="lap-ke-hoach-and-p-and-l"
+            href="#"
+            >1. Lập Kế Hoạch &amp; P&amp;L</a
+          ><a
+            class="font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface px-space-md py-space-sm rounded-xl transition-all"
+            data-path="danh-gia-rui-ro-and-kich-ban"
+            href="#"
+            >2. Đánh Giá Rủi Ro &amp; Kịch Bản</a
+          ><a
+            aria-current="page"
+            class="px-space-md py-space-sm transition-all flex items-center gap-space-xs bg-primary-container text-on-primary-container font-semibold rounded-xl shadow-[0_0_12px_rgba(2,132,199,0.3)]"
+            data-path="giam-sat-ngoai-le"
+            href="#"
+            ><span>3. Giám Sát Ngoại Lệ</span
+            ><span
+              class="bg-error-container text-on-error-container font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold shadow-[0_0_8px_rgba(239,68,68,0.4)]"
+              >04</span
+            ></a
+          >
+        </nav>
+        <div class="flex items-center gap-space-md shrink-0">
+          <div class="flex items-center gap-space-xs">
+            <button
+              class="relative p-space-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl transition-colors"
+              title="Cảnh báo ngoại lệ hàng hải"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[22px]">warning</span
+              ><span
+                class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-shoal-coral ring-2 ring-surface-deck"
+              ></span></button
+            ><button
+              class="relative p-space-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl transition-colors"
+              title="Thông báo hệ thống"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[22px]"
+                >notifications</span
+              >
+            </button>
+          </div>
+          <div
+            class="flex items-center gap-space-sm bg-surface-container-low/60 hover:bg-surface-container-high/80 p-space-xs pr-space-md rounded-full transition-colors cursor-pointer"
+          >
+            <img
+              alt="Profile"
+              class="w-8 h-8 rounded-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeqQHod5ICfgA4ECa00I5yJ3mZkLCGAnxz6Jgg4uer2MUplR3H1i-oJixlcM5ArjkyJozghKVsM82L0mEDuAWN-UBpJltwIMR7noFY6QHcnE6u0Je36Hkw6geKLKmQPmgAPPJFLJcG2u_88N8W8zF5FcCopnwtsckoOzJtiMS1ktrn23fa_M9e25M4i5djXafCXO9ANJK1axJ82qqepMIDyeyvc5etCphDpycQwO-gHimr65SgpUI9"
+            />
+            <div class="hidden md:flex flex-col text-left">
+              <span
+                class="font-body-sm text-body-sm text-text-radar font-semibold leading-tight"
+                >Trần Hoàng Nam</span
+              ><span
+                class="font-label-sm text-label-sm text-text-muted leading-tight"
+                >Trưởng phòng ĐH Vận tải</span
+              >
+            </div>
+            <span
+              class="material-symbols-outlined text-outline-variant text-[18px]"
+              >expand_more</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]">
+      <div class="flex flex-col w-full">
+        <!-- Command Strip & Operational Status Bar -->
+        <section class="w-full px-margin py-space-lg bg-surface-deck">
+          <div class="max-w-[1720px] mx-auto flex flex-col gap-space-md">
+            <!-- Operational Header Row -->
+            <div
+              class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md"
+            >
+              <div class="flex flex-col gap-space-xs">
+                <div class="flex items-center gap-space-sm">
+                  <span
+                    class="px-space-xs py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-label-sm uppercase tracking-wider"
+                    >Module 2.1 • 2.2 • 2.3</span
+                  >
+                  <span class="text-outline-variant font-label-sm text-label-sm"
+                    >|</span
+                  >
+                  <span class="font-label-sm text-label-sm text-text-muted"
+                    >ĐIỀU HÀNH NGOẠI LỆ THEO NGUYÊN LÝ "MANAGEMENT BY
+                    EXCEPTION"</span
+                  >
+                </div>
+                <div class="flex items-center gap-space-md">
+                  <h1
+                    class="font-headline-lg text-headline-lg text-text-radar tracking-tight"
+                  >
+                    Trung Tâm Giám Sát Hành Trình &amp; Ngoại Lệ Tuyến ĐTNĐ
+                  </h1>
+                  <span
+                    class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-shoal-coral/20 text-shoal-coral font-label-sm text-label-sm animate-pulse"
+                  >
+                    <span class="w-2 h-2 rounded-full bg-shoal-coral"></span>
+                    01 SỰ CỐ ĐỘI TÀU CẦN DUYỆT
+                  </span>
+                </div>
+              </div>
+              <!-- Quick Telemetry & Filter Controls -->
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <div
+                  class="flex items-center bg-abyss-canvas rounded-xl px-space-md py-space-xs text-on-surface-variant gap-space-sm"
+                >
+                  <span
+                    class="material-symbols-outlined text-[18px] text-cyan-telemetry"
+                    >tune</span
+                  >
+                  <span class="font-label-sm text-label-sm">Bộ lọc:</span>
+                  <button
+                    class="font-label-sm text-label-sm text-primary hover:text-text-radar font-semibold"
+                    onclick="filterVessels('all')"
+                  >
+                    Tất cả (14)
+                  </button>
+                  <span class="text-outline-variant">/</span>
+                  <button
+                    class="font-label-sm text-label-sm text-shoal-coral hover:text-text-radar font-semibold"
+                    onclick="filterVessels('critical')"
+                  >
+                    Ngoại lệ (1)
+                  </button>
+                  <span class="text-outline-variant">/</span>
+                  <button
+                    class="font-label-sm text-label-sm text-tide-amber hover:text-text-radar font-semibold"
+                    onclick="filterVessels('warning')"
+                  >
+                    Chờ bến/triều (3)
+                  </button>
+                </div>
+                <button
+                  class="flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-high hover:bg-surface-highlight text-text-radar rounded-xl font-label-sm text-label-sm transition-all shadow-sm"
+                  type="button"
+                >
+                  <span
+                    class="material-symbols-outlined text-[18px] text-maritime-emerald"
+                    >file_download</span
+                  >
+                  <span>Xuất Báo Cáo Sai Lệch P&amp;L</span>
+                </button>
+                <button
+                  class="flex items-center gap-space-xs px-space-md py-space-sm bg-primary-container text-on-primary-container hover:bg-primary font-semibold rounded-xl font-label-sm text-label-sm transition-all shadow-md shadow-primary-container/20"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >emergency_share</span
+                  >
+                  <span>Kích Hoạt Tổ Cứu Hộ</span>
+                </button>
+              </div>
+            </div>
+            <!-- Management by Exception Metric Bar (5 Key Telemetry Panels) -->
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm mt-space-xs"
+            >
+              <!-- Total Active Vessels -->
+              <div
+                class="bg-surface-panel p-space-md rounded-xl flex items-center justify-between shadow-sm"
+              >
+                <div class="flex flex-col">
+                  <span class="font-label-sm text-label-sm text-text-muted"
+                    >Tổng Tàu Đang Vận Hành</span
+                  >
+                  <div class="flex items-baseline gap-space-xs mt-0.5">
+                    <span
+                      class="font-display-sm text-display-sm text-text-radar"
+                      >14</span
+                    >
+                    <span class="font-label-sm text-label-sm text-outline"
+                      >chiếc</span
+                    >
+                  </div>
+                  <span
+                    class="font-body-sm text-body-sm text-secondary flex items-center gap-1 mt-1"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >sensors</span
+                    >
+                    100% kết nối AIS/VTS
+                  </span>
+                </div>
+                <div
+                  class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >directions_boat</span
+                  >
+                </div>
+              </div>
+              <!-- On-Schedule (Green) -->
+              <div
+                class="bg-surface-panel p-space-md rounded-xl flex items-center justify-between shadow-sm"
+              >
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-sm text-label-sm text-maritime-emerald flex items-center gap-1"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-maritime-emerald"
+                    ></span>
+                    Đúng Kế Hoạch (±30p)
+                  </span>
+                  <div class="flex items-baseline gap-space-xs mt-0.5">
+                    <span
+                      class="font-display-sm text-display-sm text-maritime-emerald"
+                      >10</span
+                    >
+                    <span class="font-label-sm text-label-sm text-text-muted"
+                      >/ 14 tàu</span
+                    >
+                  </div>
+                  <span class="font-body-sm text-body-sm text-text-muted mt-1"
+                    >Luồng thông thoáng, đủ mớn</span
+                  >
+                </div>
+                <div
+                  class="w-10 h-10 rounded-xl bg-maritime-emerald/10 text-maritime-emerald flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >check_circle</span
+                  >
+                </div>
+              </div>
+              <!-- Light Warning / Delays (Yellow) -->
+              <div
+                class="bg-surface-panel p-space-md rounded-xl flex items-center justify-between shadow-sm"
+              >
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-sm text-label-sm text-tide-amber flex items-center gap-1"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-tide-amber"></span>
+                    Cảnh Báo Nhẹ (Chậm 1-2h)
+                  </span>
+                  <div class="flex items-baseline gap-space-xs mt-0.5">
+                    <span
+                      class="font-display-sm text-display-sm text-tide-amber"
+                      >03</span
+                    >
+                    <span class="font-label-sm text-label-sm text-text-muted"
+                      >chờ bến / triều</span
+                    >
+                  </div>
+                  <span
+                    class="font-body-sm text-body-sm text-tide-amber/80 mt-1"
+                    >Đã tự bù chân triều kế</span
+                  >
+                </div>
+                <div
+                  class="w-10 h-10 rounded-xl bg-tide-amber/10 text-tide-amber flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >timelapse</span
+                  >
+                </div>
+              </div>
+              <!-- Critical Exception (Red) -->
+              <div
+                class="bg-error-container/40 p-space-md rounded-xl flex items-center justify-between shadow-[0_0_16px_rgba(239,68,68,0.25)]"
+              >
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-sm text-label-sm text-error font-bold flex items-center gap-1 animate-pulse"
+                  >
+                    <span class="w-2 h-2 rounded-full bg-shoal-coral"></span>
+                    NGOẠI LỆ NGUY CƠ CAO
+                  </span>
+                  <div class="flex items-baseline gap-space-xs mt-0.5">
+                    <span
+                      class="font-display-sm text-display-sm text-text-radar font-bold"
+                      >01</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-error font-semibold"
+                      >TÀU CẦN XỬ LÝ</span
+                    >
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-text-radar mt-1 font-medium"
+                    >Tàu HP-8472 (Sự cố máy &amp; cạn)</span
+                  >
+                </div>
+                <div
+                  class="w-10 h-10 rounded-xl bg-shoal-coral/20 text-shoal-coral flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >warning</span
+                  >
+                </div>
+              </div>
+              <!-- Fleet Efficiency Telemetry -->
+              <div
+                class="bg-surface-panel p-space-md rounded-xl flex items-center justify-between shadow-sm"
+              >
+                <div class="flex flex-col">
+                  <span class="font-label-sm text-label-sm text-secondary"
+                    >Tỷ Lệ Đúng Hạn &amp; Nhiên Liệu</span
+                  >
+                  <div class="flex items-baseline gap-space-sm mt-0.5">
+                    <span
+                      class="font-display-sm text-display-sm text-text-radar"
+                      >92.8%</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-maritime-emerald font-semibold"
+                      >+4.6% DO</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden"
+                  >
+                    <div
+                      class="bg-maritime-emerald h-full rounded-full"
+                      style="width: 92.8%"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >query_stats</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Main Split-Screen Tactical Layout -->
+        <div class="w-full px-margin py-space-xl bg-surface">
+          <div
+            class="max-w-[1720px] mx-auto grid grid-cols-1 xl:grid-cols-12 gap-space-lg"
+          >
+            <!-- LEFT COLUMN: 8 Cols - Prioritized Exception Grid & Baseline vs Actual Timeline -->
+            <div class="xl:col-span-8 flex flex-col gap-space-lg">
+              <!-- Live Priority Exception Cards -->
+              <div
+                class="bg-surface-panel rounded-xl p-space-lg shadow-md flex flex-col gap-space-md"
+              >
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm"
+                >
+                  <div class="flex items-center gap-space-sm">
+                    <span
+                      class="w-3 h-3 rounded-full bg-shoal-coral animate-ping"
+                    ></span>
+                    <h2
+                      class="font-headline-sm text-headline-sm text-text-radar"
+                    >
+                      Bảng Giám Sát Ngoại Lệ Tiến Độ (Baseline vs Actual ETA)
+                    </h2>
+                  </div>
+                  <div
+                    class="flex items-center gap-space-xs font-label-sm text-label-sm text-text-muted"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[16px] text-maritime-emerald"
+                      >sync</span
+                    >
+                    <span>Tự động làm mới mỗi 15s • AIS Doppler Sync</span>
+                  </div>
+                </div>
+                <!-- Vessel Card 1: CRITICAL INCIDENT (HP-8472) -->
+                <div
+                  class="vessel-item critical bg-surface-container-lowest rounded-xl p-space-md shadow-lg shadow-shoal-coral/10 transition-all flex flex-col gap-space-sm"
+                >
+                  <div
+                    class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm"
+                  >
+                    <div class="flex items-center gap-space-sm flex-wrap">
+                      <span
+                        class="px-space-xs py-0.5 rounded bg-shoal-coral text-abyss-canvas font-label-sm text-label-sm font-bold tracking-wider uppercase flex items-center gap-1"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >fmd_bad</span
+                        >
+                        MỨC 1 - KHẨN CẤP
+                      </span>
+                      <span
+                        class="font-label-lg text-label-lg text-text-radar font-bold tracking-tight"
+                        >TÀU SÔNG HP-8472</span
+                      >
+                      <span
+                        class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm"
+                        >450T Xi Măng Bao</span
+                      >
+                      <span class="text-text-muted font-body-sm text-body-sm"
+                        >| Tuyến:
+                        <strong>Ninh Bình ➔ Cảng Cây Khế</strong></span
+                      >
+                    </div>
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="font-label-sm text-label-sm text-shoal-coral font-bold bg-shoal-coral/10 px-space-sm py-1 rounded"
+                        >CHẬM: +2h 45p</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-error bg-error-container/30 px-space-sm py-1 rounded"
+                        >+150L DO Tổn Thất</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Detail Grid for Critical Vessel -->
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-4 gap-space-sm bg-surface-container/60 p-space-sm rounded-lg text-on-surface"
+                  >
+                    <div class="flex flex-col">
+                      <span class="font-label-sm text-label-sm text-text-muted"
+                        >Vị Trí Hiện Tại:</span
+                      >
+                      <span
+                        class="font-label-md text-label-md text-cyan-telemetry font-semibold flex items-center gap-1"
+                      >
+                        <span class="material-symbols-outlined text-[16px]"
+                          >pin_drop</span
+                        >
+                        Vàm Kênh Km 18+200
+                      </span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="font-label-sm text-label-sm text-text-muted"
+                        >Kế Hoạch Gốc (Baseline):</span
+                      >
+                      <span
+                        class="font-label-md text-label-md text-on-surface line-through text-outline"
+                        >ETA 12:30 (Hôm nay)</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="font-label-sm text-label-sm text-text-muted"
+                        >Dự Kiến Mới (Actual):</span
+                      >
+                      <span
+                        class="font-label-md text-label-md text-shoal-coral font-bold"
+                        >ETA 15:15 (Lỡ ca dỡ hàng)</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="font-label-sm text-label-sm text-text-muted"
+                        >Mớn Nước / Độ Sâu Luồng:</span
+                      >
+                      <span
+                        class="font-label-md text-label-md text-text-radar font-semibold"
+                        >Mớn 2.3m / Luồng 2.1m (Âm 0.2m)</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Incident Alert Banner -->
+                  <div
+                    class="bg-shoal-coral/10 p-space-sm rounded-lg flex items-start gap-space-sm text-shoal-coral"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[20px] shrink-0 mt-0.5"
+                      >report_problem</span
+                    >
+                    <div class="flex flex-col gap-0.5">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="font-body-md text-body-md font-bold text-text-radar"
+                          >Thuyền trưởng Phạm Văn Tuấn (10:14):</span
+                        >
+                        <span
+                          class="font-label-sm text-label-sm bg-shoal-coral text-abyss-canvas px-1 rounded font-bold"
+                          >MẮC CẠN CỤC BỘ &amp; HỎNG BƠM PHỤ</span
+                        >
+                      </div>
+                      <p class="font-body-sm text-body-sm text-on-surface">
+                        "Đang neo tạm lề luồng Vàm Kênh. Đã dùng máy chính giật
+                        lùi nhưng đáy bùn non cản trở. Cần canô hỗ trợ giằng kéo
+                        hoặc xà lan sang bớt 60 tấn hàng để hạ mớn trước 13:00."
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Triage Quick Action Controls (Management by Exception) -->
+                  <div
+                    class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs"
+                  >
+                    <div
+                      class="flex items-center gap-space-xs text-text-muted font-label-sm text-label-sm"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[16px] text-tide-amber"
+                        >schedule</span
+                      >
+                      <span
+                        >Nguy cơ: Hàng phạt trễ hẹn Cảng Cây Khế
+                        (-12.500.000đ)</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-space-xs flex-wrap">
+                      <button
+                        class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-high hover:bg-surface-highlight text-text-radar rounded font-label-sm text-label-sm transition-colors"
+                        type="button"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[16px] text-cyan-telemetry"
+                          >call</span
+                        >
+                        <span>Gọi Cabin Thuyền Trưởng</span>
+                      </button>
+                      <button
+                        class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-high hover:bg-surface-highlight text-secondary rounded font-label-sm text-label-sm transition-colors"
+                        type="button"
+                      >
+                        <span class="material-symbols-outlined text-[16px]"
+                          >edit_calendar</span
+                        >
+                        <span>Dời Ca Cẩu Bến Khế</span>
+                      </button>
+                      <button
+                        class="flex items-center gap-space-xs px-space-md py-space-xs bg-shoal-coral text-abyss-canvas hover:bg-shoal-coral/90 font-bold rounded font-label-sm text-label-sm transition-transform active:scale-95 shadow-md shadow-shoal-coral/30"
+                        type="button"
+                      >
+                        <span class="material-symbols-outlined text-[16px]"
+                          >local_shipping</span
+                        >
+                        <span>Điều Ca-Nô Cứu Hộ / Sang Mạn</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Vessel Card 2: WARNING (QN-3829 - Đang Chờ Triều) -->
+                <div
+                  class="vessel-item warning bg-surface-container-low rounded-xl p-space-md transition-all flex flex-col gap-space-sm"
+                >
+                  <div
+                    class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm"
+                  >
+                    <div class="flex items-center gap-space-sm flex-wrap">
+                      <span
+                        class="px-space-xs py-0.5 rounded bg-tide-amber/20 text-tide-amber font-label-sm text-label-sm font-semibold tracking-wider uppercase flex items-center gap-1"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >pause_circle</span
+                        >
+                        MỨC 2 - CHỜ TRIỀU
+                      </span>
+                      <span
+                        class="font-label-lg text-label-lg text-text-radar font-bold tracking-tight"
+                        >TÀU ĐẨY QN-3829</span
+                      >
+                      <span
+                        class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm"
+                        >380T Than Cám 5</span
+                      >
+                      <span class="text-text-muted font-body-sm text-body-sm"
+                        >| Tuyến: <strong>Cẩm Phả ➔ Hải Phòng</strong></span
+                      >
+                    </div>
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="font-label-sm text-label-sm text-tide-amber font-bold bg-tide-amber/10 px-space-sm py-1 rounded"
+                        >CHẬM: +1h 15p</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-cyan-telemetry bg-cyan-telemetry/10 px-space-sm py-1 rounded"
+                        >ETA Mới: 17:30</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-4 gap-space-sm bg-surface-container/40 p-space-sm rounded-lg text-on-surface font-body-sm"
+                  >
+                    <div>
+                      <span class="text-text-muted block text-label-sm"
+                        >Vị trí trạm:</span
+                      >
+                      <span
+                        class="font-label-md text-label-md text-text-radar font-medium"
+                        >Cửa Sông Bạch Đằng</span
+                      >
+                    </div>
+                    <div>
+                      <span class="text-text-muted block text-label-sm"
+                        >Hành động lái tàu:</span
+                      >
+                      <span
+                        class="font-label-md text-label-md text-tide-amber font-medium"
+                        >⏸️ Bấm nút dừng chờ triều</span
+                      >
+                    </div>
+                    <div>
+                      <span class="text-text-muted block text-label-sm"
+                        >Đỉnh triều dự kiến:</span
+                      >
+                      <span
+                        class="font-label-md text-label-md text-maritime-emerald font-medium"
+                        >15:45 (+2.1m nước)</span
+                      >
+                    </div>
+                    <div>
+                      <span class="text-text-muted block text-label-sm"
+                        >Trạng thái máy:</span
+                      >
+                      <span
+                        class="font-label-md text-label-md text-secondary font-medium"
+                        >Tắt máy chính, giảm hao dầu</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center justify-between flex-wrap gap-space-sm pt-space-xs"
+                  >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant italic"
+                      >"Thuyền trưởng chủ động dừng đúng kế hoạch thủy văn, bảo
+                      toàn an toàn tĩnh không gầm cầu &amp; đáy luồng."</span
+                    >
+                    <button
+                      class="px-space-md py-1 bg-surface-container-high hover:bg-surface-highlight text-primary font-label-sm text-label-sm rounded flex items-center gap-1 transition-colors"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >fact_check</span
+                      >
+                      <span>Xác Nhận Ghi Nhật Ký Chờ Triều</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Vessel Card 3: WARNING (ND-5521 - Chờ Cầu Cảng Khuyến Lương) -->
+                <div
+                  class="vessel-item warning bg-surface-container-low rounded-xl p-space-md transition-all flex flex-col gap-space-sm"
+                >
+                  <div
+                    class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm"
+                  >
+                    <div class="flex items-center gap-space-sm flex-wrap">
+                      <span
+                        class="px-space-xs py-0.5 rounded bg-tide-amber/20 text-tide-amber font-label-sm text-label-sm font-semibold tracking-wider uppercase flex items-center gap-1"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >hourglass_top</span
+                        >
+                        MỨC 2 - CHỜ CẨU BẾN
+                      </span>
+                      <span
+                        class="font-label-lg text-label-lg text-text-radar font-bold tracking-tight"
+                        >TÀU TỰ HÀNH ND-5521</span
+                      >
+                      <span
+                        class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm"
+                        >500T Cát VLXD</span
+                      >
+                      <span class="text-text-muted font-body-sm text-body-sm"
+                        >| Vị trí: <strong>Bến Cảng Khuyến Lương</strong></span
+                      >
+                    </div>
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="font-label-sm text-label-sm text-tide-amber font-bold bg-tide-amber/10 px-space-sm py-1 rounded"
+                        >CHẬM: +1h 00p</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-container/40 p-space-sm rounded-lg"
+                  >
+                    <div class="flex items-center gap-space-md">
+                      <span
+                        class="material-symbols-outlined text-tide-amber text-[24px]"
+                        >anchor</span
+                      >
+                      <div class="flex flex-col">
+                        <span
+                          class="font-body-md text-body-md text-text-radar font-semibold"
+                          >Bến đang dỡ dở tàu NB-1029 (Quá tải 1 ca máy
+                          cẩu)</span
+                        >
+                        <span class="font-body-sm text-body-sm text-text-muted"
+                          >Dự kiến bến giải phóng lúc 14:00. Đã thông báo chủ
+                          hàng cát sắp xếp xe xúc.</span
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="px-space-md py-1 bg-surface-container-high hover:bg-surface-highlight text-text-radar font-label-sm text-label-sm rounded transition-colors whitespace-nowrap"
+                      type="button"
+                    >
+                      Gia Hạn Slot Cầu Bến
+                    </button>
+                  </div>
+                </div>
+                <!-- Vessel Card 4: NORMAL (HP-9182) -->
+                <div
+                  class="vessel-item normal bg-surface-container-lowest/80 rounded-xl p-space-md transition-all flex flex-col gap-space-xs"
+                >
+                  <div
+                    class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm"
+                  >
+                    <div class="flex items-center gap-space-sm flex-wrap">
+                      <span
+                        class="px-space-xs py-0.5 rounded bg-maritime-emerald/20 text-maritime-emerald font-label-sm text-label-sm font-semibold tracking-wider uppercase flex items-center gap-1"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >check_circle</span
+                        >
+                        ĐÚNG TIẾN ĐỘ
+                      </span>
+                      <span
+                        class="font-label-lg text-label-lg text-text-radar font-bold"
+                        >TÀU CHỞ HÀNG HP-9182</span
+                      >
+                      <span class="text-text-muted font-body-sm text-body-sm"
+                        >• Xuất bến Cảng Đoạn Xá lúc 09:00</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-space-sm">
+                      <span
+                        class="font-label-sm text-label-sm text-maritime-emerald bg-maritime-emerald/10 px-space-sm py-0.5 rounded"
+                        >Baseline: ETA 14:45 (Khớp 100%)</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-text-muted font-mono"
+                        >Tốc độ: 14.2 km/h</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Vessel Card 5: NORMAL (HD-2019) -->
+                <div
+                  class="vessel-item normal bg-surface-container-lowest/80 rounded-xl p-space-md transition-all flex flex-col gap-space-xs"
+                >
+                  <div
+                    class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm"
+                  >
+                    <div class="flex items-center gap-space-sm flex-wrap">
+                      <span
+                        class="px-space-xs py-0.5 rounded bg-maritime-emerald/20 text-maritime-emerald font-label-sm text-label-sm font-semibold tracking-wider uppercase flex items-center gap-1"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >bolt</span
+                        >
+                        SỚM 15 PHÚT
+                      </span>
+                      <span
+                        class="font-label-lg text-label-lg text-text-radar font-bold"
+                        >TÀU KÉO HD-2019</span
+                      >
+                      <span class="text-text-muted font-body-sm text-body-sm"
+                        >• Hải Dương ➔ Hải Phòng</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-space-sm">
+                      <span
+                        class="font-label-sm text-label-sm text-cyan-telemetry bg-cyan-telemetry/10 px-space-sm py-0.5 rounded"
+                        >Nước xuôi dòng, máy chạy tiết kiệm</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm text-maritime-emerald font-mono"
+                        >-18L Dầu DO</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Analytical Sparkline: Delta Giờ Đến Bến & Biến Thiên Tiêu Hao DO Toàn Đội -->
+              <div
+                class="bg-surface-panel rounded-xl p-space-lg shadow-md flex flex-col gap-space-md"
+              >
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm"
+                >
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label-sm text-label-sm text-secondary uppercase tracking-wider"
+                      >Đối Soát Biến Thiên Toàn Tuyến (Baseline Matrix)</span
+                    >
+                    <h3
+                      class="font-headline-sm text-headline-sm text-text-radar"
+                    >
+                      Sai Lệch Thời Gian &amp; Nhiên Liệu Thực Tế So Với Lập
+                      Lịch
+                    </h3>
+                  </div>
+                  <div
+                    class="flex items-center gap-space-md font-label-sm text-label-sm"
+                  >
+                    <span class="flex items-center gap-1 text-primary"
+                      ><span class="w-3 h-0.5 bg-primary inline-block"></span>
+                      Baseline Chuẩn</span
+                    >
+                    <span class="flex items-center gap-1 text-shoal-coral"
+                      ><span
+                        class="w-3 h-0.5 bg-shoal-coral inline-block"
+                      ></span>
+                      Thực tế AIS</span
+                    >
+                  </div>
+                </div>
+                <!-- Inline Technical SVG Chart -->
+                <div
+                  class="w-full bg-abyss-canvas rounded-xl p-space-md relative overflow-hidden"
+                >
+                  <svg
+                    class="w-full h-36"
+                    fill="none"
+                    viewbox="0 0 800 140"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <!-- Grid Lines -->
+                    <line
+                      stroke="rgba(148, 163, 184, 0.1)"
+                      stroke-dasharray="4 4"
+                      x1="0"
+                      x2="800"
+                      y1="20"
+                      y2="20"
+                    ></line>
+                    <line
+                      stroke="rgba(148, 163, 184, 0.1)"
+                      stroke-dasharray="4 4"
+                      x1="0"
+                      x2="800"
+                      y1="60"
+                      y2="60"
+                    ></line>
+                    <line
+                      stroke="rgba(148, 163, 184, 0.1)"
+                      stroke-dasharray="4 4"
+                      x1="0"
+                      x2="800"
+                      y1="100"
+                      y2="100"
+                    ></line>
+                    <!-- Baseline Ideal Path -->
+                    <path
+                      d="M 20 60 Q 200 60, 400 60 T 780 60"
+                      opacity="0.8"
+                      stroke="#0284C7"
+                      stroke-dasharray="6 4"
+                      stroke-width="2"
+                    ></path>
+                    <!-- Actual Disruption Path -->
+                    <path
+                      d="M 20 60 L 150 58 L 260 55 L 340 75 L 450 118 L 560 95 L 670 70 L 780 65"
+                      fill="none"
+                      stroke="#EF4444"
+                      stroke-width="2.5"
+                    ></path>
+                    <path
+                      d="M 20 60 L 150 58 L 260 55 L 340 75 L 450 118 L 560 95 L 670 70 L 780 65 L 780 130 L 20 130 Z"
+                      fill="url(#alertGradient)"
+                      opacity="0.15"
+                    ></path>
+                    <!-- Point Markers -->
+                    <circle cx="260" cy="55" fill="#10B981" r="4"></circle>
+                    <circle cx="340" cy="75" fill="#F59E0B" r="4"></circle>
+                    <circle
+                      class="animate-ping"
+                      cx="450"
+                      cy="118"
+                      fill="#EF4444"
+                      r="6"
+                    ></circle>
+                    <circle cx="450" cy="118" fill="#EF4444" r="4"></circle>
+                    <!-- SVG Gradients -->
+                    <defs>
+                      <lineargradient
+                        id="alertGradient"
+                        x1="0"
+                        x2="0"
+                        y1="0"
+                        y2="1"
+                      >
+                        <stop offset="0%" stop-color="#EF4444"></stop>
+                        <stop offset="100%" stop-color="transparent"></stop>
+                      </lineargradient>
+                    </defs>
+                  </svg>
+                  <!-- Chart Callouts -->
+                  <div
+                    class="flex items-center justify-between text-label-sm font-label-sm text-text-muted mt-2 px-1"
+                  >
+                    <span>06:00 (Rời Cảng)</span>
+                    <span>09:00 (Đoạn Xá)</span>
+                    <span class="text-tide-amber font-semibold"
+                      >10:00 (Chờ Ba Chẽ)</span
+                    >
+                    <span class="text-shoal-coral font-bold"
+                      >11:15 (Điểm Sự Cố Vàm Kênh)</span
+                    >
+                    <span>14:00 (Dự báo giải tỏa)</span>
+                    <span>18:00 (Hoàn thành)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- RIGHT COLUMN: 4 Cols - Captain Mobile Sync Module (2.1 & 2.3) & Real-time Action Log -->
+            <div class="xl:col-span-4 flex flex-col gap-space-lg">
+              <!-- Module 2.1: Visual Mobile Simulator for Captains -->
+              <div
+                class="bg-surface-panel rounded-xl p-space-lg shadow-md flex flex-col gap-space-md"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[22px]"
+                      >smartphone</span
+                    >
+                    <h3
+                      class="font-headline-sm text-headline-sm text-text-radar"
+                    >
+                      Giao Diện 5 Nút Thuyền Trưởng
+                    </h3>
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-high text-cyan-telemetry"
+                    >App Mobile v2.3</span
+                  >
+                </div>
+                <p class="font-body-sm text-body-sm text-text-muted">
+                  Mô phỏng thao tác 1 chạm trên buồng lái. Khi Thuyền trưởng ấn
+                  nút, toàn bộ trạng thái sẽ đồng bộ tức thời về màn hình giám
+                  sát trung tâm.
+                </p>
+                <!-- Captain Mobile 5-Button Cluster Simulator -->
+                <div
+                  class="bg-abyss-canvas p-space-md rounded-xl flex flex-col gap-space-sm shadow-inner"
+                >
+                  <div
+                    class="flex items-center justify-between pb-space-xs text-outline font-label-sm text-label-sm"
+                  >
+                    <span>CABIN CONSOLE - TÀU HP-8472</span>
+                    <span class="flex items-center gap-1 text-maritime-emerald"
+                      ><span
+                        class="w-1.5 h-1.5 rounded-full bg-maritime-emerald animate-pulse"
+                      ></span>
+                      4G/AIS Sẵn Sàng</span
+                    >
+                  </div>
+                  <!-- Button 1: Departure -->
+                  <button
+                    class="captain-btn flex items-center justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-highlight text-on-surface transition-all text-left"
+                    type="button"
+                  >
+                    <div class="flex items-center gap-space-sm">
+                      <span
+                        class="w-8 h-8 rounded-md bg-maritime-emerald/20 text-maritime-emerald flex items-center justify-center font-bold text-base"
+                        >▶️</span
+                      >
+                      <div class="flex flex-col">
+                        <span
+                          class="font-label-md text-label-md text-text-radar font-semibold"
+                          >1. Bắt Đầu Chuyến Đi</span
+                        >
+                        <span class="font-body-sm text-body-sm text-text-muted"
+                          >Xác nhận rời phao số 0 / cầu bến</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-outline text-[18px]"
+                      >touch_app</span
+                    >
+                  </button>
+                  <!-- Button 2: Intermediate Checkpoint -->
+                  <button
+                    class="captain-btn flex items-center justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-highlight text-on-surface transition-all text-left"
+                    type="button"
+                  >
+                    <div class="flex items-center gap-space-sm">
+                      <span
+                        class="w-8 h-8 rounded-md bg-cyan-telemetry/20 text-cyan-telemetry flex items-center justify-center font-bold text-base"
+                        >📍</span
+                      >
+                      <div class="flex flex-col">
+                        <span
+                          class="font-label-md text-label-md text-text-radar font-semibold"
+                          >2. Đến Điểm Trung Gian</span
+                        >
+                        <span class="font-body-sm text-body-sm text-text-muted"
+                          >Check-in trạm VTS / phao tiêu luồng</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-outline text-[18px]"
+                      >touch_app</span
+                    >
+                  </button>
+                  <!-- Button 3: Paused / Waiting Tide -->
+                  <button
+                    class="captain-btn flex items-center justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-highlight text-on-surface transition-all text-left"
+                    type="button"
+                  >
+                    <div class="flex items-center gap-space-sm">
+                      <span
+                        class="w-8 h-8 rounded-md bg-tide-amber/20 text-tide-amber flex items-center justify-center font-bold text-base"
+                        >⏸️</span
+                      >
+                      <div class="flex flex-col">
+                        <span
+                          class="font-label-md text-label-md text-text-radar font-semibold"
+                          >3. Đang Chờ Nước / Cầu / Bến</span
+                        >
+                        <span class="font-body-sm text-body-sm text-text-muted"
+                          >Tự động kích hoạt bù giờ ETA</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="font-label-sm text-label-sm text-tide-amber bg-tide-amber/10 px-1 rounded"
+                      >Đang chọn (QN-3829)</span
+                    >
+                  </button>
+                  <!-- Button 4: Incident Alarm (Active Demo) -->
+                  <button
+                    class="captain-btn flex items-center justify-between p-space-sm rounded-lg bg-shoal-coral/20 hover:bg-shoal-coral/30 text-shoal-coral transition-all text-left"
+                    type="button"
+                  >
+                    <div class="flex items-center gap-space-sm">
+                      <span
+                        class="w-8 h-8 rounded-md bg-shoal-coral text-abyss-canvas flex items-center justify-center font-bold text-base"
+                        >⚠️</span
+                      >
+                      <div class="flex flex-col">
+                        <span
+                          class="font-label-md text-label-md text-text-radar font-bold"
+                          >4. Báo Cáo Gặp Sự Cố Luồng/Máy</span
+                        >
+                        <span
+                          class="font-body-sm text-body-sm text-shoal-coral font-medium"
+                          >Kích hoạt còi báo động Trung tâm Dispatch</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="w-2.5 h-2.5 rounded-full bg-shoal-coral animate-ping"
+                    ></span>
+                  </button>
+                  <!-- Button 5: Voyage Completed -->
+                  <button
+                    class="captain-btn flex items-center justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-highlight text-on-surface transition-all text-left"
+                    type="button"
+                  >
+                    <div class="flex items-center gap-space-sm">
+                      <span
+                        class="w-8 h-8 rounded-md bg-maritime-emerald/20 text-maritime-emerald flex items-center justify-center font-bold text-base"
+                        >✅</span
+                      >
+                      <div class="flex flex-col">
+                        <span
+                          class="font-label-md text-label-md text-text-radar font-semibold"
+                          >5. Hoàn Thành Chuyến &amp; Cập Bến</span
+                        >
+                        <span class="font-body-sm text-body-sm text-text-muted"
+                          >Chốt bảng P&amp;L dầu và giờ làm việc</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-outline text-[18px]"
+                      >touch_app</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <!-- Module 2.3: Live Exception Feed Log (Nhật ký sự cố & chờ đợi) -->
+              <div
+                class="bg-surface-panel rounded-xl p-space-lg shadow-md flex flex-col gap-space-md"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="material-symbols-outlined text-tide-amber text-[20px]"
+                      >feed</span
+                    >
+                    <h3
+                      class="font-headline-sm text-headline-sm text-text-radar"
+                    >
+                      Nhật Ký Thuyền Trưởng (Live Feed)
+                    </h3>
+                  </div>
+                  <span class="font-label-sm text-label-sm text-text-muted"
+                    >Ghi vết tự động</span
+                  >
+                </div>
+                <!-- Feed Entries with timeline styling without standard border lines -->
+                <div class="flex flex-col gap-space-sm">
+                  <!-- Feed Item 1 (10:14) -->
+                  <div
+                    class="p-space-sm bg-surface-container-lowest rounded-lg flex flex-col gap-1"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm text-shoal-coral font-bold flex items-center gap-1"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-shoal-coral"
+                        ></span>
+                        10:14 • HP-8472
+                      </span>
+                      <span class="font-label-sm text-label-sm text-outline"
+                        >Vàm Kênh Km 18</span
+                      >
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-text-radar font-semibold"
+                    >
+                      ⚠️ "Hỏng bơm giải nhiệt máy phụ, tàu neo tạm lề luồng"
+                    </p>
+                    <div
+                      class="flex items-center justify-between text-label-sm font-label-sm text-text-muted pt-1"
+                    >
+                      <span>Tọa độ: 20°12'33"N - 106°01'44"E</span>
+                      <span class="text-secondary font-medium"
+                        >Đã ghi nhận</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Feed Item 2 (09:40) -->
+                  <div
+                    class="p-space-sm bg-surface-container-lowest rounded-lg flex flex-col gap-1"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm text-tide-amber font-bold flex items-center gap-1"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-tide-amber"
+                        ></span>
+                        09:40 • QN-3829
+                      </span>
+                      <span class="font-label-sm text-label-sm text-outline"
+                        >Phao số 4 Ba Chẽ</span
+                      >
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface">
+                      ⏸️ "Chờ con nước ròng qua luồng cạn Ba Chẽ, dự kiến 15:45
+                      khởi hành lại"
+                    </p>
+                    <div
+                      class="flex items-center justify-between text-label-sm font-label-sm text-text-muted pt-1"
+                    >
+                      <span>Trạng thái: Thủy triều rút -1.1m</span>
+                      <span class="text-maritime-emerald font-medium"
+                        >An toàn luồng</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Feed Item 3 (09:00) -->
+                  <div
+                    class="p-space-sm bg-surface-container-lowest rounded-lg flex flex-col gap-1"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm text-maritime-emerald font-bold flex items-center gap-1"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-maritime-emerald"
+                        ></span>
+                        09:00 • HP-9182
+                      </span>
+                      <span class="font-label-sm text-label-sm text-outline"
+                        >Cảng Đoạn Xá</span
+                      >
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface">
+                      ▶️ "Xuất bến Cảng Đoạn Xá theo Phiếu số ST-2025-089, tải
+                      trọng 420 tấn"
+                    </p>
+                    <div
+                      class="flex items-center justify-between text-label-sm font-label-sm text-text-muted pt-1"
+                    >
+                      <span>Baseline ETA: 14:45</span>
+                      <span class="text-cyan-telemetry font-medium"
+                        >GPS On-Track</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Bottom Action Buttons -->
+                <div class="flex flex-col gap-space-xs pt-space-xs">
+                  <button
+                    class="w-full py-space-sm bg-surface-container-high hover:bg-surface-highlight text-text-radar rounded font-label-sm text-label-sm flex items-center justify-center gap-space-xs transition-colors"
+                    type="button"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[16px] text-cyan-telemetry"
+                      >history</span
+                    >
+                    <span>Xem Nhật Ký Hành Trình 24 Giờ Trước</span>
+                  </button>
+                  <div
+                    class="flex items-center justify-between px-space-xs text-text-muted font-body-sm text-body-sm"
+                  >
+                    <span
+                      >Đồng bộ máy chủ ĐTNĐ:
+                      <strong>0.3 giây trước</strong></span
+                    >
+                    <span
+                      class="text-maritime-emerald font-label-sm text-label-sm font-bold"
+                      >LIVE TELEMETRY</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Operational Decision Bar (Management by Exception Summary) -->
+        <aside class="w-full px-margin py-space-md bg-abyss-canvas">
+          <div
+            class="max-w-[1720px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-space-md"
+          >
+            <div class="flex items-center gap-space-md">
+              <div
+                class="w-10 h-10 rounded-full bg-primary-container/20 text-primary flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined text-[24px]"
+                  >verified_user</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <span
+                  class="font-label-md text-label-md text-text-radar font-bold"
+                  >Chính Sách Giám Sát: "Không Bắt Chủ Tàu Nhìn Màn Hình
+                  24/7"</span
+                >
+                <span class="font-body-sm text-body-sm text-text-muted">
+                  Thuật toán SmartTrip IWT tự động phân tích Baseline luồng, chỉ
+                  gửi cảnh báo rung &amp; SMS khi độ trễ vượt ngưỡng hoặc có va
+                  chạm mớn luồng.
+                </span>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-sm shrink-0">
+              <button
+                class="px-space-md py-space-xs bg-surface-panel hover:bg-surface-highlight text-on-surface-variant rounded font-label-sm text-label-sm transition-colors"
+                type="button"
+              >
+                Cài Đặt Ngưỡng Báo Động (±Min)
+              </button>
+              <button
+                class="px-space-md py-space-xs bg-primary hover:bg-primary/90 text-on-primary font-semibold rounded font-label-sm text-label-sm transition-colors shadow-sm"
+                type="button"
+              >
+                Phê Duyệt Điều Chỉnh Tuyến Toàn Đội
+              </button>
+            </div>
+          </div>
+        </aside>
+        <!-- Interactive Filter Logic (Management by Exception) -->
+        <script>
+          function filterVessels(category) {
+            const items = document.querySelectorAll(".vessel-item");
+            items.forEach((item) => {
+              if (category === "all") {
+                item.style.display = "flex";
+              } else if (category === "critical") {
+                if (item.classList.contains("critical")) {
+                  item.style.display = "flex";
+                } else {
+                  item.style.display = "none";
+                }
+              } else if (category === "warning") {
+                if (item.classList.contains("warning")) {
+                  item.style.display = "flex";
+                } else {
+                  item.style.display = "none";
+                }
+              }
+            });
+          }
+
+          // Interactive response for Captain Mobile buttons
+          document.querySelectorAll(".captain-btn").forEach((btn) => {
+            btn.addEventListener("click", function () {
+              this.classList.add("bg-primary-container/30");
+              setTimeout(() => {
+                this.classList.remove("bg-primary-container/30");
+              }, 300);
+            });
+          });
+        </script>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-surface-deck/80 py-space-lg shadow-[0_-1px_8px_rgba(0,0,0,0.25)]"
+    >
+      <div
+        class="w-full px-margin flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-text-muted"
+      >
+        <div class="flex items-center gap-space-md flex-wrap">
+          <span
+            class="font-label-sm text-label-sm text-on-surface-variant font-semibold"
+            >© 2025 SmartTrip IWT - Cục Đường thủy Nội địa Việt Nam</span
+          ><span class="text-outline-variant hidden sm:inline">•</span
+          ><span class="font-label-sm text-label-sm text-secondary"
+            >Trung tâm Dữ liệu Luồng &amp; Trạm Thủy văn Quốc gia</span
+          >
+        </div>
+        <div class="flex items-center gap-space-lg font-label-sm text-label-sm">
+          <span class="flex items-center gap-space-xs text-maritime-emerald"
+            ><span class="w-1.5 h-1.5 rounded-full bg-maritime-emerald"></span
+            >VTS Đồng Bộ</span
+          ><span class="text-text-muted">V1.8.4-PROD</span
+          ><a
+            class="text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Quy chuẩn KT-TV ĐTNĐ</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
