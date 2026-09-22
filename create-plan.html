@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <title>SmartTrip IWT</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#00476e",
+              surface: "#f8f9ff",
+              tertiary: "#00573b",
+              "tertiary-fixed-dim": "#68dba9",
+              "on-primary-container": "#cbe4ff",
+              "on-background": "#0b1c30",
+              "on-surface": "#0b1c30",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container-low": "#eff4ff",
+              "secondary-container": "#5bb8fe",
+              "on-secondary-fixed": "#001d31",
+              "secondary-fixed-dim": "#93ccff",
+              "inverse-primary": "#94ccff",
+              "surface-container-high": "#dce9ff",
+              "surface-bright": "#f8f9ff",
+              "error-container": "#ffdad6",
+              outline: "#707881",
+              "on-primary-fixed": "#001d32",
+              "secondary-fixed": "#cce5ff",
+              "on-tertiary-fixed": "#002114",
+              "primary-fixed": "#cde5ff",
+              "on-primary-fixed-variant": "#004b74",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-dim": "#cbdbf5",
+              "on-secondary-fixed-variant": "#004b73",
+              "surface-container-highest": "#d3e4fe",
+              "inverse-surface": "#213145",
+              secondary: "#006398",
+              error: "#ba1a1a",
+              "primary-fixed-dim": "#94ccff",
+              "surface-container": "#e5eeff",
+              "on-tertiary-container": "#83f7c2",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              background: "#f8f9ff",
+              "tertiary-container": "#00724f",
+              "outline-variant": "#c0c7d1",
+              primary: "#00507d",
+              "on-tertiary-fixed-variant": "#005137",
+              "primary-container": "#0369a1",
+              "tertiary-fixed": "#85f8c4",
+              "surface-variant": "#d3e4fe",
+              "surface-tint": "#006399",
+              "on-surface-variant": "#40474f",
+              "inverse-on-surface": "#eaf1ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-xl": "2.5rem",
+              margin: "2rem",
+              "gutter-mobile": "0.75rem",
+              "margin-mobile": "1rem",
+              "space-lg": "1.5rem",
+              "space-xs": "0.25rem",
+              "space-sm": "0.5rem",
+              "space-md": "1rem",
+              gutter: "1.5rem",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Space Grotesk"],
+              "label-md": ["Space Grotesk"],
+              "body-lg": ["Inter"],
+              "body-sm": ["Inter"],
+              "headline-lg": ["Space Grotesk"],
+              "body-md": ["Inter"],
+              display: ["Space Grotesk"],
+              "headline-sm": ["Space Grotesk"],
+              "headline-md": ["Space Grotesk"],
+              "label-lg": ["Space Grotesk"],
+              "label-sm": ["Space Grotesk"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "26px",
+                {
+                  lineHeight: "34px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+              "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+              display: [
+                "44px",
+                {
+                  lineHeight: "52px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "18px",
+                {
+                  lineHeight: "26px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-md": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "label-sm": [
+                "10px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-surface font-body-md text-body-md text-on-surface antialiased"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div
+        class="h-16 w-full px-margin flex items-center justify-between gap-space-md"
+      >
+        <div class="flex items-center gap-space-lg shrink-0">
+          <div class="flex items-center gap-space-sm">
+            <img
+              alt="SmartTrip IWT logo"
+              class="h-8 w-auto object-contain"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1XI-9jeKrti5cU30KhH1ZafcNfL28pKuWjDudTjvKHT6EJA0AuRJ7PQo4DZ4pwbxOxsTS814GfB7PD8XdsdAh4Fkb0rQeOiOBEhMvsEeAzSOxIvJjaVK2-cAN9vmuNcXD_M9uz_bFp8gILlhkLkHMZO3fiNdyJi6IS6RjByT45auN9UvA8e5VJJoEC-3HmYDM97YwdWFpDoTFIQQoKsVvJQJ10PjSxLlHrwX8Vq7t9IfbprFh4FZ7cMvg"
+            />
+            <div class="flex flex-col">
+              <span
+                class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none"
+                >SmartTrip <span class="text-secondary">IWT</span></span
+              ><span
+                class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                >Hàng hải số ĐTNĐ</span
+              >
+            </div>
+          </div>
+          <div class="h-6 w-[1px] bg-outline-variant/50 hidden lg:block"></div>
+          <nav
+            class="hidden xl:flex items-center gap-space-xs"
+            data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"
+          >
+            <a
+              class="px-space-md py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+              data-path="trang-chu"
+              href="#"
+              >Trang Chủ</a
+            ><a
+              class="px-space-md py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+              data-path="tao-chuyen-moi"
+              href="#"
+              >Tạo Chuyến Mới</a
+            ><a
+              class="px-space-md py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+              data-path="giam-sat-ngoai-le"
+              href="#"
+              >Giám Sát Ngoại Lệ</a
+            ><a
+              class="px-space-md py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+              data-path="doi-soat-p-l"
+              href="#"
+              >Đối Soát P&amp;L</a
+            ><a
+              class="px-space-md py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+              data-path="ban-do-thuy-van"
+              href="#"
+              >Bản Đồ Thủy Văn</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-space-md shrink-0">
+          <div
+            class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-low rounded-full"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"
+            ></span
+            ><span
+              class="font-label-sm text-label-sm text-tertiary font-semibold"
+              >AIS / VTS</span
+            ><span class="font-label-sm text-label-sm text-on-surface-variant"
+              >Trực tuyến 98.4%</span
+            >
+          </div>
+          <button
+            aria-label="Thông báo"
+            class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            type="button"
+          >
+            <span class="material-symbols-outlined text-[22px]"
+              >notifications</span
+            ><span
+              class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"
+            ></span>
+          </button>
+          <div class="h-5 w-[1px] bg-outline-variant/40"></div>
+          <div class="flex items-center gap-space-sm pl-space-xs">
+            <div class="hidden sm:flex flex-col text-right">
+              <span
+                class="font-label-md text-label-md text-on-surface font-semibold leading-tight"
+                >Trần Hoàng Nam</span
+              ><span
+                class="font-label-sm text-label-sm text-on-surface-variant leading-tight"
+                >Điều hành viên</span
+              >
+            </div>
+            <img
+              alt="Profile"
+              class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1X8YF7UDyNtdAB0tP_cgRAp9ySh_rKeoIMxWXYX9E21HGBgaG4jnbmvu-FTIe6kDCTYJl0OOoj4Lhrrbme_bsCSWcWJtFhxkEEQn-UILmOpHmFtVwsJXbb93rvv5_vwTHCobhSWyD55ma2th7S12oghsjYBAaHyOOpiYSbQDs687Dgyzuu7O6JbnYvhKaAsFLkMDloo6oDMh8ve7gM6LM9mQuanuUTFzOpfmDUQHW0IGkqfKYtMQlgouYU"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]">
+      <div class="flex flex-col w-full">
+        <!-- Top Progress Bar (6-Step Stepper) -->
+        <section
+          class="w-full px-margin py-space-md bg-surface-container-lowest shadow-sm mb-space-md"
+        >
+          <div class="max-w-7xl mx-auto flex flex-col gap-space-sm">
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between gap-space-xs"
+            >
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <span
+                  class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wide"
+                  >Quy trình thông minh</span
+                >
+                <h1 class="font-headline-md text-headline-md text-on-surface">
+                  Khởi Tạo Chuyến Vận Tải Mới
+                </h1>
+                <span
+                  class="px-space-sm py-0.5 rounded font-label-md text-label-md bg-surface-container text-primary font-semibold"
+                  >Mã: ST-2025-095</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"
+              >
+                <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                <span class=""
+                  >Hệ thống trợ lý luồng: Tự động tính toán mớn nước &amp;
+                  P&amp;L</span
+                >
+              </div>
+            </div>
+            <!-- Stepper Strip -->
+            <div
+              class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-space-xs pt-space-xs"
+            >
+              <div
+                class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container-low transition-colors"
+              >
+                <div
+                  class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >check</span
+                  >
+                </div>
+                <div class="min-w-0">
+                  <div
+                    class="font-label-sm text-label-sm text-tertiary uppercase leading-none font-semibold"
+                  >
+                    B.1 Đã chọn
+                  </div>
+                  <div
+                    class="font-label-md text-label-md text-on-surface truncate font-medium"
+                  >
+                    Tàu HP-9182
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container-low transition-colors"
+              >
+                <div
+                  class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >check</span
+                  >
+                </div>
+                <div class="min-w-0">
+                  <div
+                    class="font-label-sm text-label-sm text-tertiary uppercase leading-none font-semibold"
+                  >
+                    B.2 Xác nhận
+                  </div>
+                  <div
+                    class="font-label-md text-label-md text-on-surface truncate font-medium"
+                  >
+                    Clinker 400T
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container-low transition-colors"
+              >
+                <div
+                  class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >check</span
+                  >
+                </div>
+                <div class="min-w-0">
+                  <div
+                    class="font-label-sm text-label-sm text-tertiary uppercase leading-none font-semibold"
+                  >
+                    B.3 Tuyến luồng
+                  </div>
+                  <div
+                    class="font-label-md text-label-md text-on-surface truncate font-medium"
+                  >
+                    Đoạn Xá - Phả Lại
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container-low transition-colors"
+              >
+                <div
+                  class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >check</span
+                  >
+                </div>
+                <div class="min-w-0">
+                  <div
+                    class="font-label-sm text-label-sm text-tertiary uppercase leading-none font-semibold"
+                  >
+                    B.4 Giờ triều
+                  </div>
+                  <div
+                    class="font-label-md text-label-md text-on-surface truncate font-medium"
+                  >
+                    09:00 - 15/03
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container-low transition-colors"
+              >
+                <div
+                  class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >check</span
+                  >
+                </div>
+                <div class="min-w-0">
+                  <div
+                    class="font-label-sm text-label-sm text-tertiary uppercase leading-none font-semibold"
+                  >
+                    B.5 P&amp;L
+                  </div>
+                  <div
+                    class="font-label-md text-label-md text-on-surface truncate font-medium"
+                  >
+                    +19.4tr (+35%)
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container-low transition-colors"
+              >
+                <div
+                  class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >check</span
+                  >
+                </div>
+                <div class="min-w-0">
+                  <div
+                    class="font-label-sm text-label-sm text-tertiary uppercase leading-none font-semibold"
+                  >
+                    B.6 Kiểm tra
+                  </div>
+                  <div
+                    class="font-label-md text-label-md text-on-surface truncate font-medium"
+                  >
+                    94 Điểm an toàn
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container-high shadow-sm ring-1 ring-primary/30"
+              >
+                <div
+                  class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 animate-pulse"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >tune</span
+                  >
+                </div>
+                <div class="min-w-0">
+                  <div
+                    class="font-label-sm text-label-sm text-primary uppercase leading-none font-semibold"
+                  >
+                    B.7 Đề Xuất
+                  </div>
+                  <div
+                    class="font-label-md text-label-md text-primary truncate font-bold"
+                  >
+                    3 Kịch Bản AI
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Main 2-Column Operational Grid -->
+        <main class="w-full px-margin pb-space-xl">
+          <div
+            class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start"
+          >
+            <!-- LEFT COLUMN: Action Steps 1 to 4 (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col gap-space-md">
+              <!-- STEP 1: Hồ Sơ Tàu Được Chọn -->
+              <div
+                class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm"
+              >
+                <div
+                  class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-low -mx-space-md -mt-space-md p-space-sm rounded-t-lg"
+                >
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm font-semibold"
+                      >1</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >Hồ Sơ Phương Tiện Thủy</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-medium"
+                      >VR-SB Khả dụng</span
+                    >
+                  </div>
+                  <button
+                    class="px-space-sm py-1 rounded text-primary hover:bg-surface-container transition-colors font-label-sm text-label-sm font-semibold flex items-center gap-1"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >swap_horiz</span
+                    >
+                    Đổi phương tiện
+                  </button>
+                </div>
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm items-center"
+                >
+                  <div
+                    class="sm:col-span-1 rounded bg-surface-container-low p-space-xs flex flex-col items-center text-center"
+                  >
+                    <img
+                      class="w-full h-24 object-cover rounded shadow-inner mb-space-xs"
+                      data-alt="Barge transport vessel operating along northern Vietnam riverway under clear daylight with clean blue sky and calm water reflection"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0iyQ9T2FBXW-ztTYmxAwagB2Ewh7TiM1Wy_S4u7osCTV9ybpTgmdBq-eyvIboCUyP5Y65eoMQatfxFq0PxCD9P9nH-Hz_Yn6P7XvO44QnHru7LLFhuw3go_W5pohGb9TaytQOA3ysBOgDcRFFzVj40RAJ2No4Ypzo8zNLdXYaHYi4GwwdBcss9YREqw7WTtyEmvqVWEh167oqgf3LdKf766P6CkO0Xs-a1ypmD70RtINVLBf_RAsr"
+                    />
+                    <span
+                      class="font-headline-sm text-headline-sm text-primary tracking-tight"
+                      >HP-9182</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Sà lan tự hành mui trần</span
+                    >
+                  </div>
+                  <div class="sm:col-span-2 grid grid-cols-2 gap-space-xs">
+                    <div class="bg-surface-container-low p-space-xs rounded">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant block"
+                        >Trọng tải toàn phần</span
+                      >
+                      <span
+                        class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                        >450
+                        <span
+                          class="font-label-md text-label-md text-on-surface-variant"
+                          >DWT</span
+                        ></span
+                      >
+                    </div>
+                    <div class="bg-surface-container-low p-space-xs rounded">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant block"
+                        >Mớn nước đầy tải</span
+                      >
+                      <span
+                        class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                        >2.45
+                        <span
+                          class="font-label-md text-label-md text-on-surface-variant"
+                          >m</span
+                        ></span
+                      >
+                    </div>
+                    <div class="bg-surface-container-low p-space-xs rounded">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant block"
+                        >Chiều cao tĩnh không</span
+                      >
+                      <span
+                        class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                        >6.80
+                        <span
+                          class="font-label-md text-label-md text-on-surface-variant"
+                          >m</span
+                        ></span
+                      >
+                    </div>
+                    <div class="bg-surface-container-low p-space-xs rounded">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant block"
+                        >Tốc độ kinh tế</span
+                      >
+                      <span
+                        class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                        >14
+                        <span
+                          class="font-label-md text-label-md text-on-surface-variant"
+                          >km/h</span
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- STEP 2: Thông Tin Hàng Hóa -->
+              <div
+                class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm"
+              >
+                <div
+                  class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-low -mx-space-md -mt-space-md p-space-sm rounded-t-lg"
+                >
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm font-semibold"
+                      >2</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >Thông Tin Hàng Hóa Vận Chuyển</span
+                    >
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-tertiary bg-surface-container-lowest px-2 py-0.5 rounded font-semibold"
+                    >Đã tải cấu hình giá</span
+                  >
+                </div>
+                <div class="flex flex-col gap-space-sm">
+                  <div>
+                    <label
+                      class="font-label-sm text-label-sm text-on-surface-variant mb-1 block"
+                      >Chọn nhanh nhóm hàng:</label
+                    >
+                    <div class="flex flex-wrap gap-space-xs">
+                      <button
+                        class="px-space-sm py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md font-medium shadow-sm flex items-center gap-1"
+                        type="button"
+                      >
+                        <span class="material-symbols-outlined text-[16px]"
+                          >category</span
+                        >
+                        Clinker rời
+                      </button>
+                      <button
+                        class="px-space-sm py-1.5 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors"
+                        type="button"
+                      >
+                        Than cám
+                      </button>
+                      <button
+                        class="px-space-sm py-1.5 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors"
+                        type="button"
+                      >
+                        Cát san lấp / Đá
+                      </button>
+                      <button
+                        class="px-space-sm py-1.5 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors"
+                        type="button"
+                      >
+                        Container rỗng/đầy
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs"
+                  >
+                    <div class="flex flex-col gap-1">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >Khối lượng xếp hàng thực tế</span
+                      >
+                      <div class="relative flex items-center">
+                        <input
+                          class="w-full bg-surface-container-low px-space-md py-space-sm rounded font-headline-sm text-headline-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-secondary"
+                          type="text"
+                          value="400"
+                        />
+                        <span
+                          class="absolute right-space-md font-label-md text-label-md text-on-surface-variant font-medium"
+                          >TẤN</span
+                        >
+                      </div>
+                      <div
+                        class="flex items-center justify-between text-label-sm font-label-sm pt-1"
+                      >
+                        <span class="text-tertiary font-medium"
+                          >Tỷ lệ chất tải: 88.9% (An toàn vượt luồng)</span
+                        >
+                        <span class="text-on-surface-variant"
+                          >Dư tải: 50 Tấn</span
+                        >
+                      </div>
+                      <div
+                        class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden"
+                      >
+                        <div
+                          class="bg-tertiary-container h-full rounded-full"
+                          style="width: 88.9%"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >Đơn giá hợp đồng chốt</span
+                      >
+                      <div class="relative flex items-center">
+                        <input
+                          class="w-full bg-surface-container-low px-space-md py-space-sm rounded font-headline-sm text-headline-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-secondary"
+                          type="text"
+                          value="138.000"
+                        />
+                        <span
+                          class="absolute right-space-md font-label-md text-label-md text-on-surface-variant font-medium"
+                          >VND / Tấn</span
+                        >
+                      </div>
+                      <div
+                        class="flex items-center justify-between text-label-sm font-label-sm pt-1"
+                      >
+                        <span class="text-on-surface-variant"
+                          >Thanh toán: Tạm ứng 30% tại bến nhận</span
+                        >
+                        <span class="text-secondary font-semibold"
+                          >Cước ổn định</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- STEP 3: Điểm Đi - Đến & Tuyến Luồng Mini Map -->
+              <div
+                class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm"
+              >
+                <div
+                  class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-low -mx-space-md -mt-space-md p-space-sm rounded-t-lg"
+                >
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm font-semibold"
+                      >3</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >Tuyến Luồng Điểm Đi - Điểm Đến</span
+                    >
+                  </div>
+                  <span
+                    class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold"
+                    >Tổng cự ly: 68.4 Km</span
+                  >
+                </div>
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 gap-space-sm mb-space-sm"
+                >
+                  <div
+                    class="p-space-sm rounded bg-surface-container-low flex items-start gap-space-sm"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-[24px] mt-0.5"
+                      >anchor</span
+                    >
+                    <div class="min-w-0">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant uppercase block"
+                        >Điểm xuất phát (Cảng bốc)</span
+                      >
+                      <span
+                        class="font-label-lg text-label-lg font-semibold text-on-surface block truncate"
+                        >Bến Cảng Đoạn Xá</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                        >Hải Phòng • Sông Cấm (Km 00+000)</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-sm rounded bg-surface-container-low flex items-start gap-space-sm"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-[24px] mt-0.5"
+                      >location_on</span
+                    >
+                    <div class="min-w-0">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant uppercase block"
+                        >Điểm dỡ hàng (Đích)</span
+                      >
+                      <span
+                        class="font-label-lg text-label-lg font-semibold text-on-surface block truncate"
+                        >Bến Nhà Máy Phả Lại</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                        >Hải Dương • Sông Kinh Thầy (Km 68+400)</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Mini Waypoint Vector Route Graphic -->
+                <div
+                  class="rounded bg-surface-container-low p-space-sm flex flex-col gap-space-xs"
+                >
+                  <div
+                    class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant pb-1"
+                  >
+                    <span class="">Sơ đồ trạm luồng hành trình</span>
+                    <span class="text-primary font-medium"
+                      >Hành lang đường thủy phía Bắc số 1</span
+                    >
+                  </div>
+                  <div class="relative py-space-sm">
+                    <!-- Connecting Track Line -->
+                    <div
+                      class="absolute top-1/2 left-4 right-4 h-1 bg-surface-container-highest -translate-y-1/2"
+                    ></div>
+                    <div
+                      class="absolute top-1/2 left-4 w-1/2 h-1 bg-primary -translate-y-1/2"
+                    ></div>
+                    <!-- Points -->
+                    <div
+                      class="relative flex justify-between items-center text-center"
+                    >
+                      <div class="flex flex-col items-center">
+                        <div
+                          class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm font-semibold shadow-sm ring-4 ring-surface-container-lowest"
+                        >
+                          00
+                        </div>
+                        <span
+                          class="font-label-sm text-label-sm text-on-surface font-medium mt-1"
+                          >Đoạn Xá</span
+                        >
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant"
+                          >Km 0</span
+                        >
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <div
+                          class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm font-semibold ring-2 ring-surface-container-lowest"
+                        >
+                          24
+                        </div>
+                        <span
+                          class="font-label-sm text-label-sm text-on-surface font-medium mt-1"
+                          >Cửa Ruột</span
+                        >
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant"
+                          >Km 24.5</span
+                        >
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <div
+                          class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm font-semibold ring-2 ring-surface-container-lowest"
+                        >
+                          45
+                        </div>
+                        <span
+                          class="font-label-sm text-label-sm text-on-surface font-medium mt-1"
+                          >Cầu Phú Lương</span
+                        >
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant"
+                          >Km 45.2</span
+                        >
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <div
+                          class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm font-semibold shadow-sm ring-4 ring-surface-container-lowest"
+                        >
+                          68
+                        </div>
+                        <span
+                          class="font-label-sm text-label-sm text-on-surface font-semibold mt-1"
+                          >Phả Lại</span
+                        >
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant"
+                          >Km 68.4</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- STEP 4: Lịch Trình Khởi Hành -->
+              <div
+                class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm"
+              >
+                <div
+                  class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-low -mx-space-md -mt-space-md p-space-sm rounded-t-lg"
+                >
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm font-semibold"
+                      >4</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >Lịch Trình Vận Hành &amp; Giờ Xuất Bến</span
+                    >
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Tính toán theo con nước</span
+                  >
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+                  <div
+                    class="flex flex-col gap-1 p-space-sm rounded bg-surface-container-low"
+                  >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Giờ rời bến dự kiến (ETD)</span
+                    >
+                    <div class="flex items-center gap-space-xs">
+                      <span class="material-symbols-outlined text-primary"
+                        >schedule</span
+                      >
+                      <span
+                        class="font-headline-md text-headline-md text-on-surface"
+                        >09:00</span
+                      >
+                      <span
+                        class="font-label-md text-label-md text-on-surface-variant ml-auto"
+                        >15/03/2025</span
+                      >
+                    </div>
+                    <div
+                      class="mt-1 p-space-xs rounded bg-surface-container-highest flex items-center gap-1 text-primary font-label-sm text-label-sm"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >waves</span
+                      >
+                      <span class=""
+                        >Khuyến nghị: Rời bến 09:00 đón đỉnh triều Cửa Cấm lúc
+                        10:15</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-1 p-space-sm rounded bg-surface-container-low"
+                  >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Giờ cập bến đích dự kiến (ETA)</span
+                    >
+                    <div class="flex items-center gap-space-xs">
+                      <span class="material-symbols-outlined text-secondary"
+                        >flag</span
+                      >
+                      <span
+                        class="font-headline-md text-headline-md text-secondary"
+                        >14:45</span
+                      >
+                      <span
+                        class="font-label-md text-label-md text-on-surface-variant ml-auto"
+                        >15/03/2025</span
+                      >
+                    </div>
+                    <div
+                      class="mt-1 flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant pt-1"
+                    >
+                      <span class=""
+                        >Tổng thời gian chạy:
+                        <strong class="text-on-surface">5h 45p</strong></span
+                      >
+                      <span class=""
+                        >Tốc độ TB:
+                        <strong class="text-on-surface">11.9 km/h</strong></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- RIGHT COLUMN: Step 5 & Step 6 Intelligence Engine (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col gap-space-md">
+              <!-- STEP 5: Ước Tính Chuyến (P&L Simulation) -->
+              <div
+                class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm"
+              >
+                <div
+                  class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-low -mx-space-md -mt-space-md p-space-sm rounded-t-lg"
+                >
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm font-semibold"
+                      >5</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >Ước Tính Chuyến P&amp;L</span
+                    >
+                  </div>
+                  <span
+                    class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold"
+                    >Biên lãi: +35.1%</span
+                  >
+                </div>
+                <!-- Financial 3 Key Figures -->
+                <div class="grid grid-cols-1 gap-space-xs">
+                  <div
+                    class="p-space-sm rounded bg-surface-container-low flex items-center justify-between"
+                  >
+                    <div>
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant block"
+                        >Ước tính doanh thu (400T × 138k)</span
+                      >
+                      <span
+                        class="font-headline-md text-headline-md text-primary font-bold"
+                        >55.200.000
+                        <span
+                          class="font-label-md text-label-md font-normal text-on-surface-variant"
+                          >đ</span
+                        ></span
+                      >
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-primary text-[28px]"
+                      >payments</span
+                    >
+                  </div>
+                  <div
+                    class="p-space-sm rounded bg-surface-container-low flex items-center justify-between"
+                  >
+                    <div>
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant block"
+                        >Tổng chi phí dự kiến</span
+                      >
+                      <span
+                        class="font-headline-md text-headline-md text-error font-bold"
+                        >35.800.000
+                        <span
+                          class="font-label-md text-label-md font-normal text-on-surface-variant"
+                          >đ</span
+                        ></span
+                      >
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-error text-[28px]"
+                      >receipt_long</span
+                    >
+                  </div>
+                  <div
+                    class="p-space-sm rounded bg-surface-container-high flex items-center justify-between"
+                  >
+                    <div>
+                      <span
+                        class="font-label-sm text-label-sm text-tertiary block font-semibold"
+                        >LỢI NHUẬN RÒNG DỰ KIẾN</span
+                      >
+                      <span
+                        class="font-headline-md text-headline-md text-tertiary font-bold"
+                        >+19.400.000
+                        <span
+                          class="font-label-md text-label-md font-normal text-on-surface-variant"
+                          >đ</span
+                        ></span
+                      >
+                    </div>
+                    <span
+                      class="px-space-xs py-1 rounded bg-tertiary text-on-tertiary font-label-sm text-label-sm font-semibold"
+                      >+35.1%</span
+                    >
+                  </div>
+                </div>
+                <!-- Cost Breakdown Horizontal Bar -->
+                <div class="mt-space-sm pt-space-xs flex flex-col gap-1">
+                  <div
+                    class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    <span class="">Cơ cấu cấu thành chi phí:</span>
+                    <span class="font-medium text-on-surface"
+                      >35.800.000 đ</span
+                    >
+                  </div>
+                  <div class="w-full h-3 rounded-full flex overflow-hidden">
+                    <div
+                      class="bg-primary h-full"
+                      style="width: 49%"
+                      title="Nhiên liệu 49%"
+                    ></div>
+                    <div
+                      class="bg-secondary-container h-full"
+                      style="width: 22%"
+                      title="Cảng bến 22%"
+                    ></div>
+                    <div
+                      class="bg-tertiary-fixed-dim h-full"
+                      style="width: 15%"
+                      title="Lương thuyền viên 15%"
+                    ></div>
+                    <div
+                      class="bg-outline-variant h-full"
+                      style="width: 14%"
+                      title="Dự phòng 14%"
+                    ></div>
+                  </div>
+                  <div
+                    class="grid grid-cols-2 gap-x-space-sm gap-y-1 pt-space-xs font-label-sm text-label-sm"
+                  >
+                    <div
+                      class="flex items-center justify-between text-on-surface-variant"
+                    >
+                      <span class="flex items-center gap-1"
+                        ><span class="w-2 h-2 rounded-full bg-primary"></span
+                        >Dầu (820L)</span
+                      >
+                      <strong class="text-on-surface font-semibold"
+                        >17.63tr</strong
+                      >
+                    </div>
+                    <div
+                      class="flex items-center justify-between text-on-surface-variant"
+                    >
+                      <span class="flex items-center gap-1"
+                        ><span
+                          class="w-2 h-2 rounded-full bg-secondary-container"
+                        ></span
+                        >Cảng &amp; bến</span
+                      >
+                      <strong class="text-on-surface font-semibold"
+                        >7.85tr</strong
+                      >
+                    </div>
+                    <div
+                      class="flex items-center justify-between text-on-surface-variant"
+                    >
+                      <span class="flex items-center gap-1"
+                        ><span
+                          class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"
+                        ></span
+                        >Lương kíp lái</span
+                      >
+                      <strong class="text-on-surface font-semibold"
+                        >5.50tr</strong
+                      >
+                    </div>
+                    <div
+                      class="flex items-center justify-between text-on-surface-variant"
+                    >
+                      <span class="flex items-center gap-1"
+                        ><span
+                          class="w-2 h-2 rounded-full bg-outline-variant"
+                        ></span
+                        >Phí &amp; Dự phòng</span
+                      >
+                      <strong class="text-on-surface font-semibold"
+                        >4.82tr</strong
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- STEP 6: SMARTTRIP CHECK (Hydrology, Clearance & Clearance Risk) -->
+              <div
+                class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm"
+              >
+                <div
+                  class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-low -mx-space-md -mt-space-md p-space-sm rounded-t-lg"
+                >
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-label-sm font-semibold"
+                      >6</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >SMARTTRIP CHECK</span
+                    >
+                  </div>
+                  <span
+                    class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-bold"
+                    >AN TOÀN XUẤT BẾN</span
+                  >
+                </div>
+                <!-- Radar Metric Header -->
+                <div
+                  class="p-space-sm rounded bg-surface-container-low flex items-center gap-space-md mb-space-sm"
+                >
+                  <div
+                    class="relative w-16 h-16 shrink-0 flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-full h-full transform -rotate-90"
+                      viewBox="0 0 36 36"
+                    >
+                      <path
+                        class="text-surface-container-highest"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3.5"
+                      ></path>
+                      <path
+                        class="text-tertiary"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-dasharray="94, 100"
+                        stroke-linecap="round"
+                        stroke-width="3.5"
+                      ></path>
+                    </svg>
+                    <div
+                      class="absolute inset-0 flex flex-col items-center justify-center"
+                    >
+                      <span
+                        class="font-headline-sm text-headline-sm text-tertiary font-bold leading-none"
+                        >94</span
+                      >
+                      <span
+                        class="font-label-sm text-[9px] text-on-surface-variant"
+                        >ĐIỂM</span
+                      >
+                    </div>
+                  </div>
+                  <div class="min-w-0">
+                    <span
+                      class="font-label-md text-label-md font-semibold text-on-surface block"
+                      >Chỉ Số Thủy Văn &amp; An Toàn Luồng Tuyến</span
+                    >
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2"
+                    >
+                      Điều kiện mớn nước, con nước triều và tĩnh không cầu bảo
+                      đảm cho sà lan 450T lưu thông an toàn toàn trình.
+                    </p>
+                  </div>
+                </div>
+                <!-- Hydrology Checklist Items -->
+                <div class="flex flex-col gap-space-xs">
+                  <!-- Hydro 1: Tide -->
+                  <div
+                    class="p-space-xs rounded bg-surface-container-low flex items-center justify-between gap-space-xs"
+                  >
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="w-2 h-2 rounded-full bg-tertiary shrink-0"
+                      ></span>
+                      <div>
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-medium block"
+                          >Thủy triều Trạm Hòn Dấu</span
+                        >
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Dự báo đỉnh: +2.10m lúc 10:15 (Đang dâng)</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary font-label-sm text-label-sm font-semibold shrink-0"
+                      >Lý tưởng</span
+                    >
+                  </div>
+                  <!-- Hydro 2: Shoal -->
+                  <div
+                    class="p-space-xs rounded bg-surface-container-low flex items-center justify-between gap-space-xs"
+                  >
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="w-2 h-2 rounded-full bg-tertiary shrink-0"
+                      ></span>
+                      <div>
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-medium block"
+                          >Điểm cạn Sông Kinh Thầy (Km 24)</span
+                        >
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Độ sâu khả dụng 2.85m • Mớn dư +40cm lúc 11:45</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary font-label-sm text-label-sm font-semibold shrink-0"
+                      >Đạt chuẩn</span
+                    >
+                  </div>
+                  <!-- Hydro 3: Bridge Clearance -->
+                  <div
+                    class="p-space-xs rounded bg-surface-container-low flex items-center justify-between gap-space-xs"
+                  >
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="w-2 h-2 rounded-full bg-tertiary shrink-0"
+                      ></span>
+                      <div>
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-medium block"
+                          >Tĩnh không Cầu Phú Lương (Km 45.2)</span
+                        >
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Khoảng tĩnh không thực tế 7.20m (Tàu yêu cầu
+                          6.80m)</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary font-label-sm text-label-sm font-semibold shrink-0"
+                      >Hở +40cm</span
+                    >
+                  </div>
+                  <!-- Hydro 4: Navigation Channel -->
+                  <div
+                    class="p-space-xs rounded bg-surface-container-low flex items-center justify-between gap-space-xs"
+                  >
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="w-2 h-2 rounded-full bg-tertiary shrink-0"
+                      ></span>
+                      <div>
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-medium block"
+                          >Thông báo hàng hải luồng ĐTNĐ</span
+                        >
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Luồng thông suốt, không công trình thi công chắn
+                          luồng</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary font-label-sm text-label-sm font-semibold shrink-0"
+                      >Thông suốt</span
+                    >
+                  </div>
+                </div>
+                <div class="mt-space-sm pt-space-xs text-center">
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Dữ liệu quan trắc đồng bộ thời gian thực từ Cục Đường Thủy
+                    Nội Địa Việt Nam</span
+                  >
+                </div>
+              </div>
+              <div
+                class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm ring-1 ring-primary/20"
+              >
+                <div
+                  class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-low -mx-space-md -mt-space-md p-space-sm rounded-t-lg"
+                >
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm font-semibold"
+                      >7</span
+                    ><span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >Đề Xuất Phương Án Điều Hành</span
+                    >
+                  </div>
+                  <span
+                    class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-medium flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-[14px]"
+                      >auto_awesome</span
+                    >
+                    AI Phân Tích</span
+                  >
+                </div>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm"
+                >
+                  Hệ thống tự động mô phỏng 3 kịch bản vận hành dựa trên thủy
+                  triều thực tế, mức mớn nước an toàn và tối ưu hóa lợi nhuận
+                  P&amp;L:
+                </p>
+                <div class="flex flex-col gap-space-sm">
+                  <!-- Scenario A: Selected -->
+                  <div
+                    class="p-space-sm rounded-lg border-2 border-secondary bg-surface-container-low/60 shadow-sm relative"
+                  >
+                    <div
+                      class="flex items-start justify-between gap-space-xs mb-1"
+                    >
+                      <div class="flex items-center gap-space-xs">
+                        <span
+                          class="w-4 h-4 rounded-full border-4 border-secondary bg-surface-container-lowest flex items-center justify-center shrink-0"
+                        ></span
+                        ><span
+                          class="font-headline-sm text-[16px] text-primary font-bold"
+                          >Phương án A: Đón Đỉnh Triều &amp; Giữ Đủ Tải
+                          (400T)</span
+                        >
+                      </div>
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-[10px] font-bold uppercase tracking-wider shrink-0"
+                        >Khuyến Nghị AI</span
+                      >
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs pl-6"
+                    >
+                      Khởi hành 09:00 đón đỉnh triều Cửa Cấm (10:15) và vượt cạn
+                      Sông Kinh Thầy lúc 11:45 với mớn nước hở an toàn +40cm.
+                    </p>
+                    <div
+                      class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs pl-6 py-space-xs"
+                    >
+                      <div
+                        class="bg-surface-container-lowest p-space-xs rounded"
+                      >
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Lợi nhuận</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-tertiary font-bold"
+                          >+19.4tr
+                          <span class="text-[11px] font-semibold"
+                            >(+35.1%)</span
+                          ></span
+                        >
+                      </div>
+                      <div
+                        class="bg-surface-container-lowest p-space-xs rounded"
+                      >
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Thời gian chạy</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-on-surface font-semibold"
+                          >5h 45p</span
+                        >
+                      </div>
+                      <div
+                        class="bg-surface-container-lowest p-space-xs rounded"
+                      >
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Mức an toàn</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-tertiary font-bold"
+                          >94/100 (Thấp)</span
+                        >
+                      </div>
+                      <div
+                        class="bg-surface-container-lowest p-space-xs rounded"
+                      >
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Nhiên liệu</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-on-surface font-semibold"
+                          >820L dầu</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center justify-between pl-6 pt-space-xs mt-1"
+                    >
+                      <span
+                        class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1"
+                        ><span class="material-symbols-outlined text-[16px]"
+                          >check_circle</span
+                        >
+                        Đang áp dụng cho chuyến này</span
+                      ><button
+                        type="button"
+                        class="px-space-sm py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold shadow-sm"
+                      >
+                        Đã chọn
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Scenario B -->
+                  <div
+                    class="p-space-sm rounded-lg border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low transition-colors relative"
+                  >
+                    <div
+                      class="flex items-start justify-between gap-space-xs mb-1"
+                    >
+                      <div class="flex items-center gap-space-xs">
+                        <span
+                          class="w-4 h-4 rounded-full border border-outline-variant bg-surface-container-lowest shrink-0"
+                        ></span
+                        ><span
+                          class="font-headline-sm text-[16px] text-on-surface font-semibold"
+                          >Phương án B: Giảm Tải Vượt Cạn Sớm (320T)</span
+                        >
+                      </div>
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px] font-semibold uppercase tracking-wider shrink-0"
+                        >Rủi Ro Cực Thấp</span
+                      >
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs pl-6"
+                    >
+                      Khởi hành ngay lúc 07:30, hạ bớt 80T tải để mớn cạn chỉ
+                      2.15m vượt mọi điểm nông trước triều rút.
+                    </p>
+                    <div
+                      class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs pl-6 py-space-xs"
+                    >
+                      <div class="bg-surface-container-low p-space-xs rounded">
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Lợi nhuận</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-primary font-bold"
+                          >+12.6tr
+                          <span class="text-[11px] font-semibold"
+                            >(+26.8%)</span
+                          ></span
+                        >
+                      </div>
+                      <div class="bg-surface-container-low p-space-xs rounded">
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Thời gian chạy</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-on-surface font-semibold"
+                          >4h 30p</span
+                        >
+                      </div>
+                      <div class="bg-surface-container-low p-space-xs rounded">
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Mức an toàn</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-tertiary font-bold"
+                          >98/100</span
+                        >
+                      </div>
+                      <div class="bg-surface-container-low p-space-xs rounded">
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Nhiên liệu</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-on-surface font-semibold"
+                          >690L dầu</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center justify-between pl-6 pt-space-xs mt-1"
+                    >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >Sản lượng giao thấp hơn 20%</span
+                      ><button
+                        type="button"
+                        class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-colors"
+                      >
+                        Áp dụng kịch bản
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Scenario C -->
+                  <div
+                    class="p-space-sm rounded-lg border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low transition-colors relative"
+                  >
+                    <div
+                      class="flex items-start justify-between gap-space-xs mb-1"
+                    >
+                      <div class="flex items-center gap-space-xs">
+                        <span
+                          class="w-4 h-4 rounded-full border border-outline-variant bg-surface-container-lowest shrink-0"
+                        ></span
+                        ><span
+                          class="font-headline-sm text-[16px] text-on-surface font-semibold"
+                          >Phương án C: Chạy Tốc Độ Tối Đa (Max Speed)</span
+                        >
+                      </div>
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px] font-semibold uppercase tracking-wider shrink-0"
+                        >Giao Hỏa Tốc</span
+                      >
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs pl-6"
+                    >
+                      Giữ nguyên 400T tải, tăng công suất máy đạt 16.5 km/h, đến
+                      đích trước 14:05 (tiết kiệm 40 phút) kèm phụ thu dầu.
+                    </p>
+                    <div
+                      class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs pl-6 py-space-xs"
+                    >
+                      <div class="bg-surface-container-low p-space-xs rounded">
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Lợi nhuận</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-primary font-bold"
+                          >+17.6tr
+                          <span class="text-[11px] font-semibold"
+                            >(+31.8%)</span
+                          ></span
+                        >
+                      </div>
+                      <div class="bg-surface-container-low p-space-xs rounded">
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Thời gian chạy</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-on-surface font-semibold"
+                          >5h 05p (-40p)</span
+                        >
+                      </div>
+                      <div class="bg-surface-container-low p-space-xs rounded">
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Mức an toàn</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-on-surface font-bold"
+                          >89/100</span
+                        >
+                      </div>
+                      <div class="bg-surface-container-low p-space-xs rounded">
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant block uppercase"
+                          >Nhiên liệu</span
+                        ><span
+                          class="font-headline-sm text-[15px] text-error font-semibold"
+                          >920L (+1.8tr)</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center justify-between pl-6 pt-space-xs mt-1"
+                    >
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                        >Áp dụng khi cần giải phóng bến gấp</span
+                      ><button
+                        type="button"
+                        class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-colors"
+                      >
+                        Áp dụng kịch bản
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- Sticky Footer Action Bar -->
+        <section
+          class="sticky bottom-0 z-40 bg-surface-container-lowest shadow-[0_-4px_12px_rgba(0,0,0,0.06)] px-margin py-space-sm"
+        >
+          <div
+            class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-sm"
+          >
+            <div class="flex items-center gap-space-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-primary text-[20px]"
+                >verified_user</span
+              >
+              <span class="font-body-sm text-body-sm"
+                >Đã kiểm tra 6 tiêu chí thông minh: Tàu • Hàng • Luồng • Giờ
+                triều • P&amp;L • Thủy văn</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-space-xs w-full sm:w-auto justify-end"
+            >
+              <button
+                class="px-space-md py-space-xs rounded font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container transition-colors"
+                type="button"
+              >
+                Lưu Nháp
+              </button>
+              <button
+                class="px-space-md py-space-xs rounded font-label-lg text-label-lg text-on-surface hover:bg-surface-container transition-colors"
+                type="button"
+              >
+                Quay lại B.2
+              </button>
+              <button
+                class="px-space-lg py-space-xs rounded bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg font-semibold shadow-sm transition-colors flex items-center gap-space-xs"
+                type="button"
+              >
+                <span class="">Phát Hành Phiếu Điều Hành (Kịch Bản A)</span
+                ><span class="material-symbols-outlined text-[18px]"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.03)]"
+    >
+      <div
+        class="w-full px-margin py-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm"
+      >
+        <div
+          class="flex items-center gap-space-md flex-wrap justify-center md:justify-start"
+        >
+          <span class="font-body-sm text-body-sm text-on-surface-variant"
+            >© 2024 SmartTrip IWT - Hệ thống Quản trị &amp; Điều hành Vận tải
+            Thủy Nội Địa.</span
+          ><span
+            class="hidden md:inline font-body-sm text-body-sm text-outline-variant"
+            >•</span
+          >
+          <div class="flex items-center gap-space-xs">
+            <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span
+            ><span class="font-label-sm text-label-sm text-on-surface-variant"
+              >Đồng bộ VTS Quốc Gia: Hoạt động</span
+            >
+          </div>
+        </div>
+        <div class="flex items-center gap-space-lg">
+          <span class="font-label-sm text-label-sm text-on-surface-variant"
+            >Tổng đài trực ban:
+            <strong class="text-primary font-semibold">1900-IWT</strong></span
+          ><span class="font-label-sm text-label-sm text-on-surface-variant"
+            >Phiên bản v2.4.8</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
